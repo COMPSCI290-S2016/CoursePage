@@ -25,3 +25,6 @@
 [submodule "Assignments/Mini3_ICP"]
 	path = Assignments/Mini3_ICP
 	url = https://github.com/COMPSCI290-S2016/Mini3_ICP.git
+[submodule "Assignments/ArtContests/GLEAT"]
+	path = Assignments/ArtContests/GLEAT
+	url = https://github.com/ctralie/GLEAT.git

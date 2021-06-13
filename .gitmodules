@@ -13,3 +13,6 @@
 [submodule "Assignments/Group1_ImageSources"]
 	path = Assignments/Group1_ImageSources
 	url = https://github.com/COMPSCI290-S2016/Group1_ImageSources.git
+[submodule "Assignments/Group2_ShapeGoogle"]
+	path = Assignments/Group2_ShapeGoogle
+	url = https://github.com/COMPSCI290-S2016/Group2_ShapeGoogle.git

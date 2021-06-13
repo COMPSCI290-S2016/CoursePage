@@ -1,0 +1,5 @@
+Our art submission depicts a tennis court. Our idea was that the receiver could model one
+player, while the source models another. Enable transmission to see all the mistakes it is
+possible to make by hitting in the net or out, and disable the transmission to see where not
+to hit the ball (you don’t want to hit it at right at the other player do you?!). Tennis is
+tough, huh? There’s an art to it.

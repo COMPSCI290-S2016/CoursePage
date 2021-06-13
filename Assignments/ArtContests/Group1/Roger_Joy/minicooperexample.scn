@@ -1,0 +1,17 @@
+{
+    "name":"box",
+    "receiver":[0, 2, 2],
+    "source":[-1, -2, 4], 
+    "children":[
+        {
+            "mesh":"meshes/minicooper.off",
+            "meshcompressed":"meshes/minicoopercompressed.off",
+            "color":[0, 1, 0],
+            "rcoeff":0.5,
+            "transform":[1, 0, 0, 0,
+                         0, 0.71, 0.71, 0,
+                         0, -0.71, 0.71, 0,
+                         0, 0, 0, 1]     
+        }
+    ]
+}

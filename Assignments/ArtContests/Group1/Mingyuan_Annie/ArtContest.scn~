@@ -1,0 +1,16 @@
+{
+    "name":"landscape",
+    "receiver":[4, 3, -5],
+    "source":[-5, 3, 4], 
+    "children":[
+        {
+            "mesh":"meshes/land.off",
+            "color":[0, 0.5, 0.3],
+            "rcoeff":0.5,
+            "transform":[0.2, 0, 0, 0,
+                         0, 0.2, 0, 0,
+                         0, 0, 0.2, 0,
+                         0, 0, 0, 1]     
+        }
+    ]
+}

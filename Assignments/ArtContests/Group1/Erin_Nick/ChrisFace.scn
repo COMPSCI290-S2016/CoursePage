@@ -1,0 +1,40 @@
+{
+    "name":"testscene",
+    "receiver":[5, 1.5, 0],
+    "source":[-5, 1.5, 0], 
+    "children":[
+        
+        
+        {
+            "mesh":"meshes/me_faceonly.off",
+            "color":[0, 0.5, 0.5],
+            "rcoeff":0.5,
+            "transform":[8, 0, 0, 0,
+                         0, 8, 0, 0,
+                         0, 0, 8, -7.5,
+                         0, 0, 0, 1]
+            
+        },
+
+         {
+            "mesh":"meshes/m202.off",
+            "color":[0, 0.5, 0.5],
+            "rcoeff":0.5,
+            "transform":[0, 0, 1, -5.1,
+                         0, 1, 0, 0.5,
+                         -1, 0, 1, -8,
+                         0, 0, 0, 1]
+            
+        },
+        {
+            "mesh":"meshes/m202.off",
+            "color":[0, 0.5, 0.5],
+            "rcoeff":0.5,
+            "transform":[0, 0, -1, 5.1,
+                         0, 1, 0, 0.5,
+                         1, 0, 1, -8,
+                         0, 0, 0, 1]
+            
+        }
+    ]
+}

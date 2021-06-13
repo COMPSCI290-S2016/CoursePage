@@ -1,0 +1,8 @@
+I wrote a function to generate a city scene with randomly sized 
+streets and buildings and randomly placed receiver and source. Click the very top button in 
+index.html to build a random city. Some parameters are set as local varibles in the function, 
+such as dimension of the city, ranges of building size and height, and range of street width. 
+Note there is a scale factor m used to scale the entire city, so for example setting it to 0.01 
+gives a 1:100 miniature. By default m=1 so that the city is "to scale" (i.e. all the dimensions 
+and sizes are in meters). I set the external viewpoint to be from the highest point of the city, 
+which might makes the city looks smaller, but it actually is to scale

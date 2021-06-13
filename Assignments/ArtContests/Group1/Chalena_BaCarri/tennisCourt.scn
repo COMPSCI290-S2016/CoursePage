@@ -1,0 +1,107 @@
+{
+    "name":"ceilingfloorbox",
+    "receiver":[5, 1.5, 10],
+    "source":[-5, 1.5, -10], 
+    "children":[
+        {
+            "mesh":"meshes/square.off",
+            "color":[0.8, 0.8, 0.8],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[20, 0, 0, 0,
+                         0, 20, 0, 0,
+                         0, 0, 20, 0,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, -8.2,
+                         0, 1, 0, 0.03,
+                         0, 0, 20, 0,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, 8.2,
+                         0, 1, 0, 0.03,
+                         0, 0, 20, 0,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/box.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[20, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 1, 0,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 1, -9.5,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 1, 9.5,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[16, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 0.3, 4.5,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[16, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 0.3, -4.5,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 4.7, 2,
+                         0, 0, 0, 1]     
+        },
+        {
+            "mesh":"meshes/square.off",
+            "color":[0, 0.3, 0.5],
+            "rcoeff":0.5,
+            "tcoeff":0.3,
+            "transform":[0.3, 0, 0, 0,
+                         0, 2, 0, 0.03,
+                         0, 0, 4.7, -2,
+                         0, 0, 0, 1]     
+        }
+    ]
+}

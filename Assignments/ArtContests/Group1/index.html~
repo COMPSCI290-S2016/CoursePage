@@ -1,0 +1,421 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../../main.css" />
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../../index.html">General</a></li>
+<li><a href = "../../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../../assignments.html">Assignments</a></li>
+<li><a href = "../../../finalproject.html">Final Project</a></li>
+<li><a href = "../../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><a href = "../spec.html">Group Assignment 1</a><BR>Image Sources for Acoustic Simulations<BR><b>ART CONTEST RESULTS</b></h1>
+
+In this assignment, students 
+
+<HR>
+In some of the examples below, you can click to view the scenes interactively.  This is simply for viewing; no acoustics will be provided to avoid posting solutions to problems that might be re-assigned in a future iteration of this course
+
+<h1>Billy/Jay/Lydia</h1>
+
+<h2>K-Ville (<a href = "Billy_Jay_Lydia/KVille.html">Click here</a> to view interactively)</h2>
+<img src = "Billy_Jay_Lydia/KVille.png">
+
+<BR><BR>
+<h2>Transmission Inside/Outside Box</h2>
+
+<img src = "Billy_Jay_Lydia/Transmission_InsideOutsideBox1.png">
+
+<BR><BR>
+<img src = "Billy_Jay_Lydia/Transmission_InsideOutsideBox2.png"><BR><BR>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/HGPIee7jAaY" frameborder="0" allowfullscreen></iframe>
+
+
+<BR><BR><HR>
+<h1>Brooks</h1>
+
+<h2>Campus Quad (<a href = "Brooks/campusQuad.html">Click here to view interactively</a>)</h2>
+
+<img src = "Brooks/campus-quad-order-2.png"><BR><BR>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/cOxznsV_YA8" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR>
+<h2>Box Fourth Order Reflections</h2>
+<img src = "Brooks/boxes-reflections-order-4.png">
+
+<BR><BR>
+<h2>Image Sources Outside of Ellipsoid</h2>
+<img src = "Brooks/Source_outside_Sphere.png">
+
+
+
+<BR><BR><HR>
+
+<h1>Chalena/Ba'Carri</h1>
+
+<h2>Tennis Court (<a href = "Chalena_BaCarri/tennisCourt.html">Click here to view interactively</a>)</h2>
+
+<pre>
+"Our art submission depicts a tennis court. Our idea was that the receiver could model one
+player, while the source models another. Enable transmission to see all the mistakes it is
+possible to make by hitting in the net or out, and disable the transmission to see where not
+to hit the ball (you don't want to hit it at right at the other player do you?!). Tennis is
+tough, huh? There's an art to it."
+</pre>
+
+<img src = "Chalena_BaCarri/court_tranmission.png">
+
+<BR><BR><HR>
+
+<h1>Clem/Gray/Sanmi (<font color = "red">Honorable Mention!</font>)</h1>
+
+<h2>Large Room</h2>
+<img src = "Clem_Gray_Sanmi/LargeRoom.png">
+
+<h2>Tiny City</h2>
+
+<img src = "Clem_Gray_Sanmi/TinyCity.png">
+
+<h2>Larger City Scape (<a href = "Clem_Gray_Sanmi/cityscape.html">Click here</a> to view interactively)</h2>
+
+<BR><img src = "Clem_Gray_Sanmi/CityScape1.png"><BR><BR>
+
+<img src = "Clem_Gray_Sanmi/CityScape2.png"><BR><BR>
+
+<img src = "Clem_Gray_Sanmi/CityScape3.png"><BR><BR>
+
+<h2>Ellipsoidal Whisper Chamber</h2>
+Most group did this task.  I picked this submission to show this because of this group's lulzy sound choice (Selena Gomez "Round And Round" because of the roundness of the ellipsoid...heh...)
+
+<BR><BR>
+
+Notice in the videos below how the source (drawn in green so it will show out) is very far away, and when not on the foci, the sound is barely audible (you may have to turn up your speakers to hear it).  But when moving to the foci, it suddenly sounds as if Selena is right next to me!
+
+<table>
+<tr><td><h3>Echo Chamber Off Foci</h3></td><td><h3>Echo Chamber On Foci</h3></td></tr>
+<tr>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/1sMc-r87izc" frameborder="0" allowfullscreen></iframe>
+</td>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/SaKFKUeZM90" frameborder="0" allowfullscreen></iframe>
+</td>
+</tr>
+</table>
+
+
+<h2>Pyramids of Egypt (<a href = "Clem_Gray_Sanmi/pyramidsofegypt.html">Click here to view interactively</a>)</h2>
+<b>The models here were made by hand in a text editor!!</b>
+<BR><BR>
+
+<img src = "Clem_Gray_Sanmi/PyramidsOfEgypt1.png"><BR><BR>
+
+<img src = "Clem_Gray_Sanmi/PyramidsOfEgypt2.png"><BR><BR>
+
+<h3>Sphinx!!</h3>
+<img src = "Clem_Gray_Sanmi/PyramidsOfEgypt3.png"><BR><BR>
+
+<BR><BR><HR>
+
+<h1>Erin/Nick (<font color = "red">Honorable Mention!</font>)</h1>
+
+<h2>Big Rotated Desk</h2>
+<img src = "Erin_Nick/BigRotatedDesk.png"><BR>
+
+<h2>Reverberation</h2>
+<img src = "Erin_Nick/Reverberation.png"><BR>
+
+<h2>Second Order Ellipsoid Images</h2><BR>
+<img src = "Erin_Nick/SecondOrderSphere.png">
+
+<h2>Chris Tralie?!?! (<a href = "Erin_Nick/chrisface.html">Click here to view interactively</a>)</h2>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/fBbT4QkEKzc" frameborder="0" allowfullscreen></iframe>
+
+
+<h2>Epic Battle (<a href = "Erin_Nick/battlescene.html">Click here to view interactively</a>)</h2>
+
+My head fighting superman with a throng of onlookers (go to the receiver's point of view to start with superman.  Disable mesh edges to see my wonderful face details more clearly):<BR><BR>
+
+<img src = "Erin_Nick/Superman_City.png"><BR>
+
+<h2>Dragon Scene</h2>
+
+<img src = "Erin_Nick/dragonscene.png">
+
+<BR><BR><BR><HR>
+<h1>Mingyuan/Annie (<font color = "red">Honorable Mention!</font>)</h1>
+
+<h2>Whisper Chamber Paths On Foci</h2>
+<img src = "Mingyuan_Annie/Whisper_OnFocus.png""><BR><BR>
+
+<h2>Binaural Sound (3D Sound)</h2>
+
+<h3>Put on your headphones to listen to the sound below
+
+
+<table>
+<tr><td><h3>Source to left of head</h3></td><td><h3>Source to right of head</h3></td></tr>
+<tr>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/PLWq_O2hLyo" frameborder="0" allowfullscreen></iframe></td>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/dkO0qrKzo9Y" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+</table>
+
+
+<BR><BR><h2>Landscape (<a href = "Mingyuan_Annie">Click here</a> to view interactively)</h2>
+
+<h3>Made in Maya</h3>
+
+<img src = "Mingyuan_Annie/Landscape1.png"><BR><BR>
+
+
+<img src = "Mingyuan_Annie/Landscape2.png"><BR><BR>
+
+<img src = "Mingyuan_Annie/Landscape3.png"><BR><BR>
+
+<BR><BR><HR>
+
+<h1>Nina/Brandon/Cosi</h1>
+
+<h2>Ellipsoid First Order Images</h2>
+<img src = "Nina_Brandon_Cosi/Ellipsoid_ImageSources.png"><BR><BR>
+
+
+<h2>Simple Scene, Higher Order Images</h2>
+<img src = "Nina_Brandon_Cosi/ImageSources.png"><BR><BR>
+
+<h2>Bedroom Binaural (Put on headphones, <a href = "Nina_Brandon_Cosi/roomscene.html">Click here to view interactively</a>)</h2>
+
+<table>
+<tr><td><h3>Source to left of head</h3></td><td><h3>Source to right of head</h3></td></tr>
+<tr>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/5PeiJlaUVC8" frameborder="0" allowfullscreen></iframe></td>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/-gKa-uhnEZk" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+</table>
+<BR><BR>
+<img src = "Nina_Brandon_Cosi/Bedroom_Binaural.png"><BR><BR>
+
+<h2>City Scene (<a href = "Nina_Brandon_Cosi/cityscene.html">Click here to view interactively</a>)</h2>
+
+<img src = "Nina_Brandon_Cosi/city.png"><BR><BR>
+
+<img src = "Nina_Brandon_Cosi/citypaths_birdseye.png"><BR><BR>
+
+
+<BR><BR><HR>
+<h1>Parit/Justin</h1>
+
+<h2>Rotated Desk Images</h2>
+
+<img src = "Parit_Justin/RotatedDesk_Images.png"><BR><BR>
+
+<h2>High Reverb Racquetball Court Binaural (Put on headphones)</h2>
+
+<table>
+<tr><td><h3>Source to left of head</h3></td><td><h3>Source to right of head</h3></td></tr>
+<tr>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/rJu2PW7w8N0" frameborder="0" allowfullscreen></iframe></td>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/zOR6jPszHeQ" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+</table>
+
+
+
+
+<BR><BR><HR>
+<h1>Roger/Joy</h1>
+
+
+<h2>Mini Cooper (<a href = "Roger_Joy/index.html">Click here</a> to view interactively)</h2>
+
+<img src = "Roger_Joy/MiniCooper.png">
+
+<BR><BR>
+<h2>High Reverb Box</h2>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/FZ9mo6uIQRg" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR><BR><HR>
+<h1>Anonymous Group</h1>
+
+<h3>Curvy Pinwheel with lots of symmetries! (<a href = "Anon/artcontest.html">Click here to view interactively</a>)</h3>
+
+<img src = "Anon/ArtContest.png">
+
+
+<BR><BR><HR>
+
+<h1>Siyang/Shenghan/Jincheng</h1>
+
+<h2>Drawing Normals</h2>
+
+<img src = "Siyang_Shenghan_Jincheng/DrawingNormals.png"><BR><BR>
+
+<h2>Debugging</h2>
+<img src = "Siyang_Shenghan_Jincheng/Debugging.png"><BR><BR>
+
+<h2>Procedurally Generated City (!!)</h2>
+These guys made a program to make a random city:<BR><BR>
+<img src = "Siyang_Shenghan_Jincheng/City1.png"><BR><BR>
+
+
+<h2>Darth Vader Binaural (Put On Headphones, <a href = "Siyang_Shenghan_Jincheng">Click here</a> to view interactively))</h2>
+
+<table>
+<tr><td><h3>Source to left of head</h3></td><td><h3>Source to right of head</h3></td></tr>
+<tr>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/NZQCBVUuFLg" frameborder="0" allowfullscreen></iframe></td>
+<td>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/uWq3MjLsoEQ" frameborder="0" allowfullscreen></iframe></td>
+</tr>
+</table>
+
+<img src = "Siyang_Shenghan_Jincheng/Simplified2.png"><BR><BR>
+
+<BR><HR>
+
+<h1>Weston/Aaron (<font color = "red">Honorable Mention!!</font>)</h1>
+
+
+<h2>Bounding Box</h2>
+
+<img src = "Weston_Aaron/BoundingBox.png"><BR><BR>
+
+<h2>Connected Reverberation Chambers</h2>
+
+<img src = "Weston_Aaron/ThirdOrderReflections_ReverbChamber.png">
+
+<h3>Inside one chamber</h3>
+<BR><BR>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/FG5yWxeLWoM" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR>
+<h3>From One Chamber To Other via Hallway</h3>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/ibUIuLiLefQ" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR>
+<h2>City! (<a href = "Weston_Aaron/index.html">Click here</a> to view interactively)</h2>
+
+
+
+
+<img src = "Weston_Aaron/Screenshot1.png">
+
+<BR><BR>
+<img src = "Weston_Aaron/Screenshot2.png">
+
+<BR><BR>
+<img src = "Weston_Aaron/Screenshot3.png">
+
+<BR><BR>
+<h3>With bounding boxes</h3>
+<img src = "Weston_Aaron/Screenshot_BBox.png">
+
+<BR><BR><BR><HR>
+
+<h1>Yuhan/Mingxuan</h1>
+
+<h2>Greek City in Sphere (<a href = "Yuhan_Mingxuan">Click here</a> to view interactively)</h2>
+
+<iframe width="700" height="450" src="https://www.youtube.com/embed/FlzVx8rMRxE" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR><BR><HR>
+<h1>Zach/Natalie/John (<font color = "red">Winners!!!</font>)</h1>
+
+
+<h2>City Scene Second Order Reflections</h2>
+<h3>Lots of "boxcars"</h3>
+<img src = "Zach_Natalie_John/CityScene_SecondOrder.png"><BR><BR>
+
+
+
+<h2>Zombie Farm</h2><!-- (<a href = "Zach_Natalie_John/farmscene.html">Click here</a> to view interactively)</h2>!-->
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/DXtbrHSLlFs" frameborder="0" allowfullscreen></iframe>
+
+<BR><BR>
+
+<h2>Rubik's Cube Inception (!!) (<a href = "Zach_Natalie_John/index.html">Click here</a> to view interactively)</h2>
+
+A house which is inside of a Rubik's cube.  Inside of said house is another rubiks cube.  Inside of that rubik's cube is another house... (OMG)<BR><BR>
+
+<iframe width="420" height="315" src="https://www.youtube.com/embed/baKyt75VMF4" frameborder="0" allowfullscreen></iframe>
+<BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_1.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_2.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_3.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_4.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_5.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_6.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_7.png"><BR><BR>
+
+<img src = "Zach_Natalie_John/RubiksCube_8.png"><BR><BR>
+
+<h3>....and that's it for now folks!</h3>
+
+</div>
+
+
+<script src = "equations.js"></script>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+
+
+

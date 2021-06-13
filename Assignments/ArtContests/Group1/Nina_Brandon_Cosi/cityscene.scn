@@ -1,0 +1,317 @@
+{
+    "name":"cityscene",
+    "receiver":[4.52, 7.89, 1.0],
+    "source":[-5, 1.5, 0], 
+    "children":[
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.0, 0.5, 0.0],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, 2,
+                         0, 10, 0, 5,
+                         0, 0, 2, 2,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.7, 0.7],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, 2,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+        
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.2, 0.2, 0.2],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, 3,
+                         0, 10, 0, 5,
+                         0, 0, 2, -12,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.7, 0.7],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, 3.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.3, 0.3, 0.3],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, -10,
+                         0, 10, 0, 5,
+                         0, 0, 2, -3,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.7, 0.7],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, 3.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.3, 0.2, 0.4],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, -14,
+                         0, 10, 0, 5,
+                         0, 0, 3, 12,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.6, 0.7, 0.7],
+                "rcoeff":0.5,
+                "transform":[1.5, 0, 0, 3.25,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.4, 0.2, 0.2],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, 3,
+                         0, 14, 0, 7,
+                         0, 0, 3, 12,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.5, 0.5],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 2.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                },
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.2, 0.7, 0.5],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 4.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.6, 0.2, 0.1],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, 3,
+                         0, 14, 0, 7,
+                         0, 0, 3, -3.5,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.9, 0.7],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 1.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                },
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.9, 0.7, 0.9],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 4.5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+
+
+
+
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.3, 0.5, 0.6],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, -14,
+                         0, 14, 0, 7,
+                         0, 0, 3, 3,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.65, 0.61, 0.74],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 2.75,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                },
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.7, 0.7, 0.7],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+
+
+        { 
+            "mesh":"meshes/box.off",
+            "color":[0.0, 0.5, 0.5],
+            "rcoeff":0.5,
+            "transform":[2, 0, 0, -14,
+                         0, 14, 0, 7,
+                         0, 0, 3, -11,
+                         0, 0, 0, 1],  
+            "children":[
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.3, 0.3, 0.7],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 3,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                },
+                { 
+                "mesh":"meshes/box.off",
+                "color":[0.9, 0.2, 0.7],
+                "rcoeff":0.5,
+                "transform":[1, 0, 0, 5,
+                             0, 1, 0, 0,
+                             0, 0, 1, 0,
+                             0, 0, 0, 1]    
+                }
+            ]
+        },
+
+
+
+
+
+
+
+        {
+            "mesh":"meshes/square.off",
+            "color":[0.8, 0.8, 0.8],
+            "rcoeff":0.5,
+            "transform":[40, 0, 0, 0,
+                         0, 40, 0, 0,
+                         0, 0, 40, 0,
+                         0, 0, 0, 1]    
+        },
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[40, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 2, 0,
+                             0, 0, 0, 1] 
+        },
+
+
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[40, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 2, 7.5,
+                             0, 0, 0, 1] 
+        } ,
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[40, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 2, 15,
+                             0, 0, 0, 1] 
+        } ,
+
+
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[40, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 2, -7.5,
+                             0, 0, 0, 1] 
+        } ,
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[40, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 2, -15,
+                             0, 0, 0, 1] 
+        } ,
+
+
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, -20,
+                             0, 1, 0, 0,
+                             0, 0, 40, 0,
+                             0, 0, 0, 1] 
+        } ,
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, 0,
+                             0, 1, 0, 0,
+                             0, 0, 40, 0,
+                             0, 0, 0, 1] 
+        } ,
+        {"mesh":"meshes/square.off",
+                "color":[1.0, 0.5, 1.0],
+                "rcoeff":0.5,
+                "transform":[2, 0, 0, 20,
+                             0, 1, 0, 0,
+                             0, 0, 40, 0,
+                             0, 0, 0, 1] 
+        }
+        
+    ]
+}

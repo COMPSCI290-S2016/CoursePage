@@ -1,0 +1,6 @@
+*Talk about matrix interpretations and show examples in 2D
+-Show rotation matrix, shear matrix
+*Motivate homogenous coordinates in 2D (ask them if they can come up with a matrix that does it, and show mathematically why this is impossible)
+*Start working with homogenous coordinates, and show how rotating + translating is not the same as translating + rotating
+*Show how normals have to be treated differently in general
+*Jump to 3D and show rotation matrices

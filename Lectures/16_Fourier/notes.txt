@@ -1,0 +1,2 @@
+
+*Raffle point question: write out Fourier matrix, ask them what type of matrix it is

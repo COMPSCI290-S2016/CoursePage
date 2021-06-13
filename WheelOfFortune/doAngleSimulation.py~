@@ -1,0 +1,18 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+if __name__ == '__main__':
+    finalAngle = 2*np.pi
+    alpha = 0.2
+    targetTime = 5.0
+    omega0 = (finalAngle + 0.5*alpha*targetTime*targetTime)/targetTime
+    t = np.linspace(0, 5*targetTime, 100)
+
+    angles = omega0*t - 0.5*alpha*t*t
+    omega = omega0 - alpha*t
+
+    plt.subplot(2, 1, 1)
+    plt.plot(t, angles)
+    plt.subplot(2, 1, 2)
+    plt.plot(t, omega)
+    plt.show()

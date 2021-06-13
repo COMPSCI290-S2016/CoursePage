@@ -1,0 +1,170 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../index.html">General</a></li>
+<li><a href = "../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../assignments.html">Assignments</a></li>
+<li><a href = "../../finalproject.html">Final Project</a></li>
+<li><a href = "../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Lecture 1: Course Sneak Preview, Equidecomposing Polygons</center></h1>
+
+<ul>
+<li><a href = "#overview">Overview</a></li>
+<li>
+<a href = "#details">Finite 2D Polygon Equidecomposability (Details)</a>
+<ul>
+<li><a href = "#tri2canonrect">Triangle To A "Canonical Rectangle"</a></li>
+<li><a href = "#rect2rect">Rectangle To Rectangle: "Escalator Method"</a></li>
+<li><a href = "#poly2poly">Any Polygon To Any Polygon with The Same Area</a></li>
+</ul>
+</li>
+<li><a href = "#code">Equidecomposability Code/Demo</a></li>
+<li><a href = "#further">Further Reading / Studying</a></li>
+</ul>
+
+<h2><a name = "overview">Overview</a></h2>
+Today's lecture was mostly spent on course policies and an overview of all assignments.  But I gave a brief lecture on the math for one of the possible final projects on "Equidecomposability."  We showed a constructive proof that for two polygons <b>A</b> and <b>B</b> with the same area, it is possible to cut <b>A</b> into a finite number of pieces that can be rigidly re-arranged like a puzzle to form polygon <b>B</b>.  This is known as the <a href = "http://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem">Wallace Bolyai Gerwein theorem</a>.  For details, read on to the <a href = "#details">next section</a>.  I am hoping that at least one group will use this concept to cut two surfaces represented as triangles meshes into each other for the <a href = "../../finalproject.html">final project</a>.
+<BR><BR>
+
+<h2><a name = "details">Finite 2D Polygon Equidecomposability</a></h2>
+
+In order to cut one polygon into another, we first need two intermediate steps
+
+<h3><a name = "tri2canonrect">Triangle To A "Canonical Rectangle"</a></h3>
+First, for any triangle, we need to figure out some way to cut it into some rectangle with the same area.  Given the scheme below, I will call such a rectangle a "canonical rectangle."  This is done by choosing some vertex on the triangle <b>ABC</b>, say vertex <b>A</b>, and dropping a perpendicular to the opposite side <b>BC</b>.  This will be the first cut.  Then, make another cut perpendicular to the first cut which is halfway through it (half the height of the triangle <b>h</b>).  This partitions the triangle into two triangles and a trapezoid.  In the image below, they are triangles <b>ADE</b>, <b>AEF</b>, and trapezoid <b>DBCF</b>.  Now note that in the image below, triangle <b>AEF</b> is congruent to triangle <b>CHF</b> the opposite angles and the fact that they are both right triangles, plus <b>AE</b> and <b>CH</b> are both length <b>h/2</b>.  By the same argument, triangle <b>ADE</b> is congruent to triangle <b>BDG</b>.  We can rotate both of these triangles around points <b>F</b> and <b>D</b> to form a rectangle, as shown below<BR><BR>
+
+<img src = "tri2rect.png"><BR><BR>
+
+Note that some care has to be taken if <b>ABC</b> is an obtuse triangle (a triangle with one angle greater than 90 degrees).  In this case, depending on the choice of vertex <b>A</b>, it is possible that dropping a perpendicular will leave the triangle:<BR><BR>
+
+<img src = "tri2rectobtuse.png"><BR><BR>
+
+In this case, simply relabel the triangle so that the perpendicular is dropped starting at the vertex corresponding to the obtuse angle instead, and we're back in business:<BR><BR>
+
+<img src = "tri2rectobtusefixed.png"><BR><BR>
+
+Also, even in the case of an acute triangle, it is often wise to label the point <b>A</b> so that the pieces will be as even as possible, to prevent skinny pieces in the animation.
+
+<BR><BR>
+<h3><a name = "rect2rect">Rectangle To Rectangle: "Escalator Method"</a></h3>
+We also need a way to cut any rectangle into any other rectangle with the same area.  To do this, take two such rectangles and align them at their lower left corner so that the taller rectangle is labeled <b>ABCD</b> and the wider rectangle is labeled <b>EBFG</b>, as in the picture below.  Then, draw a line segment from point <b>A</b> to point <b>F</b>, and label its intersection points with the polygons as <b>J</b> and <b>K</b> as shown below.  Now note that triangle <b>AKD</b> is congruent to triangle <b>JFG</b> and triangle <b>AEJ</b> is congruent to triangle <b>KCF</b>.  This is a little bit trickier to show than before.  The proof involves showing that one of these pairs of triangles is similar, and then it uses <i>the fact that rectangle <b>ABCD</b> and rectangle <b>EBFB</b> have the same area</i>.  If you don't use the fact that those two rectangles have the same area, the proof will fail (and in general when you're doing proofs and noticed you haven't used all of the information, you either proved something more general, or you made a mistake).  <a href = "alexrect2rectproof.png">Click here</a> to see a detailed proof that my friend <a href = "http://animusanthem.com/">Alex Hallden-Abberton</a> wrote out.  10 points extra credit to anyone who figures out a simpler proof.<BR><BR>
+
+Given that triangle <b>AKD</b> is congruent to triangle <b>JFG</b>, slide triangle <b>AKD</b> down line segment <b>AF</b> (the "escalator") until it coincides with triangle <b>JFG</b>.  Do the same to slide triangle <b>AEJ</b> in to place over triangle <b>KCF</b>.  The image below shows the final equivalences
+
+<BR><BR>
+<img src = "rect2rect.png"><BR><BR>
+
+Some care needs to be taken if the wider rectangle is more than two times wider than the taller rectangle.  In this case, the escalator line is not contained within both polygons and the congruences are broken:<BR><BR>
+
+<img src = "rect2recttoowide.png"><BR><BR>
+
+In this case, simply cut the wider rectangle in half and turn it into a rectangle with half the width and twice the height, until its width is less than twice the width of the taller rectangle:<BR><BR>
+
+<img src = "rect2recttoowidefixed.png"><BR><BR>
+
+
+<h3><a name = "poly2poly">Any Polygon To Any Polygon with The Same Area</a></h3>
+Now that we can cut any triangle into some rectangle and any rectangle into other rectangle with the same area, we can combine the two steps to cut any triangle into any rectangle.  This turns out to be enough to cut any polygon into any polygon.  Reasoning through this was the <a href = "../../index.html#BQOTD">big question of the day</a>.  It boils down to the following three observations
+
+<ol>
+<li>
+It is possible to to <a href = "https://en.wikipedia.org/wiki/Polygon_triangulation">cut any polygon into a bunch of triangles</a>.  There is a very simple <b>O(N^3)</b> algorithm to do this for a simple polygon (no holes or self-intersections) that involves "ear cutting" (cutting off one triangle at a time and checking to make sure each triangle can be cut) and another not too much more complicated sweep line algorithm to do it in <b>O(NlogN)</b> time, but it is theoretically possible to do it <b><a href = "https://en.wikipedia.org/wiki/Polygon_triangulation#Computational_complexity">in linear time</a></b>, as shown by my undergraduate computational geometry professor <a href = "https://www.cs.princeton.edu/~chazelle/">Bernard Chazelle</a>.  The problem has an <b>O(N logN)</b> lower bound for polygons with holes, which can be shown with a reduction to sorting.  Anyway, for the purposes of this discussion, all we really need to know is that it's possible.  <BR><BR>
+</li>
+
+<li>
+Once a polygon is cut up into a bunch of triangles, we can cut it into a square of the same area by using the steps we developed before to cut any triangle into any rectangle.  In particular, let the area of the polygon be <b>X<SUP>2</SUP></b>.  Then we cut each triangle into a rectangle with width <b>X</b> and stack all of those rectangles up on top of each other.  See the example below for a polygon with six sides which has been cut into 4 triangles, each of which is cut into rectangles that are stacked up into a square:<BR><BR>
+
+<img src = "poly2square.png"><BR><BR>
+
+</li>
+
+<li>
+For two polygons with the same area, each can be cut into the same square, and from there the pieces can be intersected to make smaller pieces that can be arranged to form one or the other shape.  Now we have finally accomplished our objective of finding pieces that can be re-arranged into either polygon.  This gets a bit messy, so below I'm only showing an example with two different triangles with the same area (the simplest case).  In the picture below, the pieces from the triangle on the left are drawn with a blue border, and pieces from the triangle on the right are drawn with a black border.  We'll talk about an algorithm towards the end of the first unit that can intersect two polygons and which is a key step in 3D rendering.<BR><BR>
+
+<img src = "tri2rect2tri.png">
+
+<BR><BR>For those who chose to work on this for their final project, <b>this is by far the trickiest step due to numerical precision difficulties intersecting polygons</b> (you'll notice that some of the polygons are quite small).  
+</li>
+
+</ol>
+
+<h2><a name = "code">Equidecomposability Code/Demo</a></h2>
+The code I ran today in class is in the github repository <a href = "https://github.com/ctralie/Equidecomposability">https://github.com/ctralie/Equidecomposability</a>.  To check it out, type
+
+<pre>
+<code>
+git clone --recursive git://github.com/ctralie/Equidecomposability.git
+</code>
+</pre>
+
+You will need to have the Python packages Numpy and Tkinter installed to run this.  The entry point for cutting a triangle into a rectangle is <b>tri2RectGUI.py</b>.  And the meat of the code that performs the cutting is in <b>Equidecomposition.py</b>.  The code is a bit messy!  I did this project in a very short amount of time when I myself was an undergraduate and have learned a lot since.  I mainly hope this will serve as a reference for those groups who wish to work on Equidecomposability as their final project.
+
+
+<h2><a name = "further">Further Reading / Studying</a></h2>
+<p>
+For those interested, here is some more context and related material
+</p>
+<p>
+Recently, it was proved that it is possible to do an even fancier equidecomposition between two polygons called a <a href = "https://en.wikipedia.org/wiki/Hinged_dissection">Hinged Dissection</a>, in which the pieces stay connected to each other at vertices during the motion from one shape to the other.  This leads to truly remarkable animations, one of which was featured in the old LucasArts game "<a href = "https://www.youtube.com/watch?v=kTs2GIZVGoI&feature=youtu.be&t=21m28s">The Dig</a>."
+</p>
+
+<p>
+It is also possible to show a truly strange result, which is that if we allow an infinite number of pieces, then it is theoretically possible under a certain choice of axioms to cut a sphere in 3D space into two spheres, each with the same area as the original.  Iterating this process, one can say it is theoretically possible to "cut a pea into the sun."  This is known as the <a href = "https://en.wikipedia.org/wiki/Banach%E2%80%93Tarski_paradox">Banach Tarski Paradox</a>.  Below is a Youtube video which does an excellent job explaining this paradox for those interested (infinity gets very strange):<BR><BR>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s86-Z-CbaHA" frameborder="0" allowfullscreen></iframe><BR><BR>
+
+They way I like to think about this is, it seems like a paradox because we haven't found anything in nature that behaves like this.  But under some <a href = "https://en.wikipedia.org/wiki/Axiom_of_choice">very reasonable axioms about infinite sets</a>, it is mathematically true.  So either it's something that's merely abstract, or it will be found to explain something in nature that we can't yet fathom (maybe something at the subatomic level).
+
+
+
+<!--http://www.reddit.com/r/woahdude/comments/366m5m/geometry_is_weird/-->
+
+<!--http://en.wikipedia.org/wiki/Tarski%27s_circle-squaring_problem-->
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+
+
+

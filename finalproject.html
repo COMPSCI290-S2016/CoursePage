@@ -1,0 +1,175 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="index.html">General</a></li>
+<li><a href = "syllabus.html">Syllabus</a></li>
+<li><a href = "assignments.html">Assignments</a></li>
+<li><a href = "finalproject.html">Final Project</a></li>
+<li><a href = "raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+
+<div id="page-content">
+<h1><center>Final Project</center></h1>
+
+<h2><a href = "FinalProjects">Click here</a> to see a collage of all student final projects</h2>
+
+<h2>Overview</h2>
+There will be one large final project in this course which accounts for 25% of the final grade and which will be done over roughly half of the course.  The projects all span fun topics which should lead to some tangible deliverables at the end of the course.  They must be done in groups.  Each project is novel in some way, where novelty could be measured by the problem, the approach, or the accessibility of existing methods to non-experts.  Project groups and topics will be determined about a third of the way through the course
+
+<BR><BR><HR>
+<a name = "presentations"><h2>Project Presentations / Documentation</h2></a>
+
+<p>
+Due to the larger class size this semester, it is simply not feasible for everyone to present their final projects during class time.  Instead, students will be required to make videos summarizing their work.  Talking over a powerpoint is fine, but this is also an opportunity to make a more visually polished result, possibly even with animations, which is appropriate given the nature of this course.  Once the videos are completed, each student will be randomly assigned 3-4 videos from other groups in the course to watch and for which to provide critical feedback.  This feedback will factor into the participation grade.  <BR>
+<b>NOTE: I will of course also be watching each video carefully myself.</b><BR>
+<b>NOTE ALSO: This fabulous idea about video recorded presentations is adapted from one of my research collaborators <a href = "http://paulbendich.com/teaching.html">Paul Bendich</a></b>
+</p>  
+
+<p>
+No formal writeup will be required for the projects, but students will be expected to submit a brief document summarizing their accomplishments in bullet form, providing a summary of completed code, and providing directions to use the code
+</p>
+<HR>
+<h2>Grading Rubric</h2>
+
+<table cellpadding = 10>
+<tr><td><b>20%</b></td><td><u>Initial project milestone:</u> How close did you get to accomplishing the initial goals we set out?</td></tr>
+<tr><td><b>45%</b></td><td><u>Technical refinement:</u> How much did the project mature over the time you worked on it?  How close are you to the final goal that we had?</td></tr>
+<tr><td><b>15%</b></td><td><u>Narrated video:</u> Graded for overall clarity, quality of figures/animations, and demonstration of what you did so that other students can understand it</td></tr>
+<tr><td><b>10%</b></td><td><u>Code/Documentation/Mini Report:</u> In lieu of a formal final report, you will submit a brief summary of what you accomplished, along with code and directions on how to use it.  You can think of this as an extended README.  You will be graded on the quality of your code and documentation (how easy is it for someone who doesn't know your project to run your code or to get started replicating your results?).<BR>
+<b>You should also submit a single slide with a representative screenshot and some bullet points describing what you did for the class final project collage</b>
+</td></tr>
+<tr><td><b>10%</b></td><td><u>Above and beyond</u>: How much did you do to refine this project and to make it your own?  Did you put any unique twists on it that weren't suggested by the instructor?</td></tr>
+</table>
+
+<BR><HR>
+
+<h2>Project Topics</h2>
+Below are a list of projects that students can choose from.  Towards the beginning of the second unit of the course, groups will rank their top three choices, and the instructor will assign projects based on interest and the technical background of each group.
+<BR><b>NOTE: There will likely be more than one group to working on the same project.  In that case, some collaboration is expected between the groups getting through core issues.  Otherwise, unique solutions are expected, or the groups should carve out different portions of the same problem</b><BR>
+<ul>
+<li><b>Equidecomposability of 3D Surface Meshes</b><BR>
+Given a polygon A and a polygon B with the same area, it is always possible to cut polygon A up into a finite number of pieces that can be rigidly rearranged (rotated/translated in the plane) to form polygon B.  We learn in the course that one popular 3D surface representation is the triangle mesh, which is just a bunch of 2D polygons stitched together.  The goal of this project will be to cut two meshes with the same surface area (after rescaling) into pieces which can be arranged into each other and to create a cool animation of the parts flying from one shape to the other.<BR><i>This project is perfect for students who are stronger on the programming side of the spectrum, as the math is surprisingly straightforward but the code is devilishly tricky due to numerical precision issues</i>.  A fantastic deliverable for the course would be a Javascript application which can take two triangle meshes as input, scale them so they have the same surface area, and show the pieces flying from one shape to the other.  Such an app would be worthy of the front page of Reddit!<BR><BR>
+</li>
+
+<li><b>Ghissi Alterpiece: Virtual Real Time Rendering for The North Carolina Museum of Art<BR></b>
+For those in the class who want to learn more about real time rendering with WebGL in the browser and shaders, or who want to explore a space in between image processing and geometry processing, there is an exciting opportunity that has popped up here at Duke.  <a href = "http://fds.duke.edu/db/aas/math/faculty/ingrid/">Professor Ingrid Daubechies</a> is working on a project re-imagining paintings from the <a href = "http://www.metmuseum.org/collection/the-collection-online/search/436495">Ghissi Alterpiece</a> in a virtual world, which will be put on display in the North Carolina Museum of Art in Fall 2016.  The group working on this project would add some 3D geometry effects to enhance the background of the paintings and to help simulate what specular lighting effects would have looked like as a person walked around the painting, and also possibly do geometric-based rejuvenation of the existing paintings.  The output of this project may actually be featured in the North Carolina Museum of art, so it's a very unique opportunity.<BR><BR>
+</li>
+
+<li><b>Making Nasher Museum Medieval Statues Speak in The Browser</b><BR>
+I have had some ongoing work with the Nasher Art Museum modeling heads, texturing them, and making them speak using the Laplacian Mesh algorithm (assignment 4) to transfer 3D facial landmarks of me talking onto the heads, as part of a <a href = "https://bassconnections.duke.edu/">Bass Connections</a> project.  <a href = "https://www.youtube.com/watch?v=r7wMg7zjb3Y">Click here</a> to see my prototype in action.  It would be awesome to port this to the browser for the Nasher museum's web site, but this is challenging because there is a lack of fast numerical tools in Javascript.  Also, my speech acquisition app for people who want to record speech for the statue is quite hacky at the moment, and it's important to have a good interface for art history students without much technical knowledge to be able to record meaningful monalogues for the statues.  Therefore, there would be two deliverables for this project
+<ol>
+<li>A Cholesky Factorization implementation for sparse matrices.  This is a numerical algorithm that doesn't exist in Javascript at the moment and which is vital to making the speech transfer fast.  It will be a good contribution to the Javascript development community</li>
+<li>A user interface on top of the Intel RealSense 3D sensor for recording 3D facial landmarks synchronized with sound, and a way for placing these landmarks on virtual statues</li>
+</ol>
+This project is great for those (like me) who are interested in the intersection of technology and the humanities, and it will also give the group a jump start on assignment #4.  It may also be featured in the Nasher Art Museum on Duke's campus as an exhibit, depending on progress<BR><BR>
+</li>
+
+<li><b>3D Face Fitting And Parameterization for Expression Synthesis / Face Morphing </b><BR>
+This project is closely related to the talking heads Nasher museum project.  Students will implement the technique in <a href = "http://gravis.cs.unibas.ch/publications/2008/FG08_Amberg.pdf">this paper</a>, which is a variant on the ICP algorithm, to fit a 3D face model corrupted by noise to a database of faces.  The group will then use PCA in the database to synthesize new expressions on the scanned face.  The end goal will be to take a scan of one of the students in this class and make him/her smile, frown, look suprised, etc, regardless of the expression he/she had when the initial 3D scan came in.  It is also possible to change other aspects of the face, as shown <a href = "http://faces.cs.unibas.ch/bfm/main.php?nav=1-1-0&id=details">here</a> (you can make the face younger/older, more masculine/feminine, etc).  Time permitting, this group can also try to fit pictures of faces to 3D models to modify the facial expressions, following techniques in <a href = "http://gravis.cs.unibas.ch/publications/2009/BFModel09.pdf">this paper</a>, so that a 3D scan isn't even necessary. <BR><BR></li>
+
+
+<li><b>3D Blood Vessel Shape Statistics</b><BR>
+In this project, students will compute shape statistics on the surfaces of 3D blood vessel data to summarize information about the shear stress of blood vessels in that region.  Students will primarily be working with open data from a <a href = "http://www.vascularmodel.com/miccai2012/">3D vascular modeling competition</a>.  The goal will be to come up with more descriptive summary of regions of the blood vessel than simply the average shear stress in a plane slice.  Examples could include computing spin images or spherical harmonic descriptors at different parts of the blood vessel (in this way, it is basically an application of group assignment 2).  Time permitting, students may also use these statistics to help match regions between two different hearts to put the hearts into correspondence.<BR><BR>
+</li>
+
+<!--<li>
+<b>Procedurally generating 3D puzzles</b><BR>
+2D jigsaw puzzles can be fairly complicated already, so what happens when we go up a dimension?  <a href = "http://www.thingiverse.com/">Thingiverse</a> is a good place to start for inspiration.  What would be best, though, is if we could come up with a scheme to automatically generate different 3D puzzles with some element of randomness.  <i>This is extremely open-ended</i>.  If this project is successful enough, there may be the option to physically realize the puzzles at the end of the course using laser cutters or 3D printers<BR><BR>
+</li>!-->
+
+
+
+
+<li><b>Animating MOCAP data in the browser / 3D Lemur Tracking (?)</b><BR>
+There is lots of interesting 3D data on the web of tracked joints during human activities, including the <a href = "http://mocap.cs.cmu.edu/">CMU MOCAP database</a>.  There are <a href = "http://mocap.cs.cmu.edu/tools.php">a number of tools</a> for viewing this data, but most of them require C++ knowledge, a Matlab license, or some form of technical ability beyond the average computer user.  This project will enable people with limited technical skill to browse and interactively visualize motion capture databases, which could open these databases up to a wider research audience.  This group should also experiment with motion capture software in the Kinect v2 to see if they can create an interface to catpure and display new data.  Time permitting, the group may also try to do "skinning" animations, in which they animate surfaces based on the motion capture data.<BR><BR>
+
+The group(s) who work on this project may also take this work in a fairly unique direction working with the <a href = "http://lemur.duke.edu/">Duke Lemur Center</a>.  The scientists there would like to get motion capture data of lemurs as they move around in 3D, and it would be interesting to see if software for the Kinect which is calibrated to work on humans will work at all on lemurs.  It would be great if the group could make enough progress to get to this point, as this is a truly novel use of 3D geometry which is certainly unique to Duke!<BR><BR>
+</li>
+
+<!--<li><b>3D Face Verification</b><BR>-->
+<!--With the advent of cheap 3D cameras that are now making their way into <a href = "http://www.intel.com/content/www/us/en/architecture-and-technology/realsense-overview.html">consumer hardware</a>, it is important to develop software which takes advantage of this new modality.  One potential application of this technology is automatic face recognition, which can be used to unlock or personalize the device.  One issue with 2D face recognition from ordinary cameras for these applications is that someone can simply hold up a picture or put on makeup to fool the algorithm.  But with 3D data, it is impossible to fool the system this way.  The group that works on this project will try to extract shape statistics that robustly discriminate faces, including but not limited to the nonrigid statistics we learn in the fourth unit of the course.  The final deliverable should be a system which can differentiate between all of the students in the class using an <a href = "http://click.intel.com/intel-realsense-developer-kit.html">Intel RealSense</a> sensor.<BR><BR>-->
+<!--</li>-->
+
+
+
+
+<!--<li>-->
+<!--<b>Exploring 3D shape collections</b><BR>-->
+<!--With the explosion of 3D shapes available on the Internet, it is important to come up with ways to parameterize the "space" of shapes so users can browse through them in a meaningful way.  In this project students will apply their knowledge of rigid and nonrigid shape matching to create a metric between shapes and to explore this metric space to look for structure.  For instance, it would be desirable for all car models to cluster in one part of the space close to each other, which is very far away from the part of the space where human body models reside.  <a href = "http://vovakim.com/">Vladamir Kim</a>, a 3D geometry researcher currently in the creative technologies lab at Adobe, has done a lot of work in this area which is worth looking at.  Also, some recent work done by me <a href = "http://www.lix.polytechnique.fr/~maks/papers/obsbg_fmaps.pdf">and others</a> suggests that it may be worth looking for structures such as "loops" in this space.  Part of this work will include finding an appropriate large database of 3D shapes to explore.  An excellent deliverable would be an interactive Javascript application that allows users to search through a collection of shapes, zooming in and out, or possibly even querying the database with a particular polygon mesh and then zooming into the part of the collection that is the "closest"<BR><BR>-->
+<!--</li>-->
+
+<!--<li>-->
+<!--<b>Robot Mapping Environments with SLAM (and Acoustic Simulation Verification?)</b><BR>-->
+<!--For those interest in robotics, an good course-relevant project could be to automatically map out 3D environments with an iRobot Create and a Kinect One sensor.  This project would be more experimental that other projects, and a lot of it would likely be finding the best "<a href = "http://openslam.org/">SLAM</a>" (Simultaneous Localization And Mapping) algorithm implementation that works with the iRobot Create + Kinect One platform in room-sized environments (which in itself would be a useful contribution to the research community).  <a href = "https://www.youtube.com/watch?v=quqF5_ZE_fI">Click here</a> to see a video fo 3D SLAM being done on a drone.  <a href = "http://www.computervisionblog.com/2016/01/why-slam-matters-future-of-real-time.html">Click here</a> to see a blog entry highlighting recent developments in SLAM.  If time permits, this group could run their code from assignment 1 on simplified polygonal representations of the map they learn to simulate sound, and then compare versus measured sounds in the environment.  It would also be really cool to have a visualization of sound waves bouncing around in scanned environment<BR><BR></li>-->
+
+
+
+<!--<li><b>Motorized 3D Heads That Speak / Projecting Speech Onto A Head</b><BR>-->
+<!--For people more on the maker side, a great project related to the one above could be to create a 3D motorized head which can move the mouth/eyebrows/cheeks, and which can be used to play back recorded facial landmarks from the Intel RealSense sensor synchronized with speech (i.e. a physical talking head).  Alternatively, students could work to project recorded speech onto a styrofoam head, as in <a href = "https://www.youtube.com/watch?v=pqO2fLkXjAY">this video</a>.-->
+<!--<BR><BR>-->
+<!--</li>-->
+
+<!--<li><b>Education and 3D Geometry</b><BR>-->
+<!--I am down with just about any project that seeks to share knowledge from the course with people.  Possible projects could involve developing visualization tools for the Internet community at large and/or making 3D geometry topics (or even geometry coding) accessible to elementary school students.  <BR><BR>-->
+<!--</li>-->
+
+<!--<li><b>Sonifying 3D Geometry</b><BR>-->
+<!--One great project for the course would involve an interplay between sound and 3D geometry.  For instance, can we use sound to elucidate aspects of 3D shapes that are visually imperceptible?  This has obvious industrial applications, and in fact there has been some <a href = "http://dl.acm.org/citation.cfm?id=2355600">recent work on this</a>.  But on a more global scale, is there a way to automatically turn 3D shapes into sound or music for the visually impaired, using the geometry descriptors we learn in the course?  Though sound is not a direct focus of this course, a big part of my dissertation revolves around sound processing, and so I can assist with the technical side as needed.<BR><BR>-->
+<!--</li>-->
+
+<!--<li>-->
+<!--<b>Deep Learning in 3D</b><BR>-->
+<!--I am no expert on deep learning but I do know it has been relatively untapped for issues in 3D shape classification and retrieval.  So if you want to learn about a hot topic and apply it to this course, by all means.  I know enough to point you in the right direction-->
+<!--<BR><BR>-->
+<!--</li>-->
+
+</ul>
+
+</h3>
+
+<!--Students will work in teams on a semester long project to use the tools they learn in this class to address unsolved, real world problems, and each team will be paired with a researcher in the Information Initiative at Duke (IID) who will be the point person for the respective project.  Possible problems (depending on IID participation and need) may include
+
+<h3>
+<ul>
+<li>Segmenting or visualizing structures in large 3D brain data</li>
+<li>Analyzing the shape of lemur teeth to help evolutionary anthropologists</li>
+<li>Learning facial expressions from 3D range scans of faces, and simulating "PIE-Invariant" (Pose/Illumination/Expression Invariant) faces</li>
+<li>Virtual restoration of medieval statues in the Nasher Museum</li>
+</ul>
+</h3>
+
+(Note: I have either personally been involved in all of the above projects, or I have collaborated with people working on them.  They are all ongoing in IID)!-->
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

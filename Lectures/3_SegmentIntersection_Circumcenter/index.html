@@ -1,0 +1,441 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+<script src= "gl-matrix-min.js"></script>
+<script src = "delaunay.js"></script>
+<script src = "myanswers.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../index.html">General</a></li>
+<li><a href = "../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../assignments.html">Assignments</a></li>
+<li><a href = "../../finalproject.html">Final Project</a></li>
+<li><a href = "../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Lecture 3: Line Segment Intersection, Circumcenters, Delaunay Triangulation, JSON</center></h1>
+
+<h2><a href = "Lecture.pdf">Click here</a> to see today's slides</h2>
+
+
+
+<p>
+Today we went over three applications of vector math: line segment intersection, triangle circumcenters, and Delaunay Triangulation.  While these all might sound like unrelated topics, they turn out to be tools together in the same big picture.  The first two also happen to be the question in part 2 of the <a href = "../../Assignments/Mini1_GeometricPrimitives">first mini assignment</a>
+</p>
+
+
+<ul>
+<li>
+<a href = "#lineseg">Line Segment Intersection</a>
+<ul>
+<li><a href = "#cramer">Cramer's Rule</a></li>
+<li><a href = "#skew">3D And Skew Lines</a></li>
+</ul>
+<li><a href = "#circumcenters">Triangle Circumcenters</a>
+<ul>
+<li><a href = "#circumcenterdiscovery">Interactive Demo: Circumcenter Discovery</a></li>
+</ul>
+</li>
+<li><a href = "#delaunay">Delaunay Triangulation</a>
+<ul>
+<li><a href = "#delaunaydemo">Interactive Demo: Delaunay Circumcircles</a></li>
+</ul>
+</li>
+</li>
+
+
+
+</ul>
+
+<h1><a name = "lineseg">Line Segment Intersection</a></h1>
+
+Let's dive into line segment intersection now.  The picture below shows what we want to accomplish<BR><BR>
+
+<img src = "intersectionSketch.svg">
+
+<p>
+Note that this is asking more than simply detecting if line segments intersect or not, which is fine for some applications; in this lecture, we're going to talk about how to actually find the point of intersection if it exists.  We will start out in 2D, which is all that's required for the <a href = "../../Assignments/Mini1_GeometricPrimitives">first mini assignment</a>, but we will also talk about how to extend this to 3D.
+</p>
+
+<p>
+Before we jump into the segment part, let's talk about the more general problem of intersecting infinite lines.  Then the segment part will be a simple tweak.  To talk about intersecting lines, it's helpful to use the parametric form of lines that describes a line as a point on the line plus a scalar times a direction vector, as shown in the picture below:
+</p>
+
+<img src = "LinesParam.svg">
+
+<p>
+Mathematically, line 1 is described as
+<h2>
+\[ l_1: \vec{a} + s \vec{u} \]
+</h2>
+
+and line 2 is described as 
+
+<h2>
+\[ l_2: \vec{b} + t \vec{v} \]
+</h2>
+
+Note that <b>a</b> and <b>b</b> can be any two points on <b>l<SUB>1</SUB></b> and <b>l<SUB>2</SUB></b>, respectively, and these two equations will describe the same set of points.</p>
+
+<p>
+Now let's figure out how to actually intersect them.  In order to do this, we need to find a point in common between the two.  What we want is an <i>s</i> and a <i>t</i> so that
+
+<h2>
+\[ \vec{a} + s\vec{u} = \vec{b} + t\vec{v} \]
+</h2>
+</p>
+
+Geometrically, we want the red point in the figure below:<BR><BR>
+<img src = "LinesParamIntersect.svg"><BR><BR>
+
+In 2D, because each direction vector has two coordinates, we have two equations in two variables:<BR>
+
+<h2>
+\[ (1) \vec{a}_x + s \vec{u}_x = \vec{b}_x + t \vec{v}_x\]
+</h2>
+
+<h2>
+\[ (2) \vec{a}_y + s \vec{u}_y = \vec{b}_y + t \vec{v}_y\]
+</h2>
+
+Now re-arrange the variables so that the unknowns are on the left side
+
+
+<h2>
+\[ (1) s \vec{u}_x - t \vec{v}_x = \vec{b}_x - \vec{a}_x  \]
+</h2>
+
+<h2>
+\[ (1) s \vec{u}_y - t \vec{v}_y = \vec{b}_y - \vec{a}_y  \]
+</h2>
+
+<h3><a name = "cramer">Cramer's Rule</a></h3>
+You can solve this any way you want that you learned in a past algebra class, but an easy-to-implement way with such a small system of equations is <a href = "https://en.wikipedia.org/wiki/Cramer's_rule">Cramer's Rule</a>.  For Cramer's rule, it's helpful to rewrite the system of equations in matrix form (we'll talk more about matrices next Thursday).  For now, we'll simply state that for a system of equations<BR>
+
+<h2>
+\[ (1) a s + b t = e \]
+</h2>
+<h2>
+\[ (2) c s + d t = f \]
+</h2>
+
+Cramer's rule tells us that the solutions are
+
+<h2>
+\[ s = \frac{ \left| \begin{array}{cc} e & b \\ f & d \end{array} \right| }{  \left| \begin{array}{cc}  a & b \\ c & d \end{array} \right| }, t = \frac{ \left| \begin{array}{cc} a & e \\ c & f \end{array} \right| }{  \left| \begin{array}{cc}  a & b \\ c & d \end{array} \right| }  \]
+</h2>
+
+Where the <b><code>| A |</code></b> notation means the <a href = "https://en.wikipedia.org/wiki/Determinant#2.C2.A0.C3.97.C2.A02_matrices">2D determinant</a> of the matrix <b>A</b>.  In other words, when viewed as a matrix equation <code><b>Ax = b</b></code>, or when expanded:
+
+<h2>
+\[ 
+\left[ \begin{array}{cc} a & b \\ c & d \end{array} \right] \left[ \begin{array}{c} s \\ t  \end{array} \right]  = \left[ \begin{array}{c} e \\ f \end{array} \right] 
+\]
+</h2>
+
+take a quotient of determinants, where the denominator is the determinant of <b>A</b> and the numerator is the determinant of <b>A</b> replacing the column corresponding to the variable you want by <b>b</b>.  Expanding everything out, we get
+
+<h2>
+\[ s =  \frac{ed-fb}{ad-cb}, t = \frac{af-ce}{ad-cb} \]
+</h2>
+
+Going back to our original system of equations for the line segments and plugging in the corresponding constants from the points and direction vectors (<b>check me on this before implementing!!</b>), we get
+
+<h2>
+\[ s = \frac{-v_y(b_x-a_x) + v_x(b_y - a_y)}{-u_xv_y + u_yv_x}\]
+</h2>
+<h2>
+\[ t = \frac{u_x(b_y - a_y) - u_y(b_x - a_x)}{-u_xv_y + u_yv_x} \]
+</h2>
+
+Now that's a neat little closed form solution, isn't it?
+<p>
+But note, very importantly, <b>that if the two lines are parallel, the denominator will be zero</b> (and we certainly don't want to divide by zero).  That is, if <code><b>u</b> = (a, b)</code> and <code><b>v</b> = (ka, kb)</code> for some constant <b>k</b>, then the denominator is <b><code>(-akb + bka = 0)</code></b>.  This of course makes perfect geometric sense, because in planar Euclidean geometry, parallel lines either never intersect (no solution), or they are the same line (infinitely many solutions).  So always check that denominator to see if there is a unique solution or not.
+</p>
+
+<p>
+To extend what we have just done to two line segments <b>ab</b> and <b>bc</b>, we simply solve the system of equations that we get from
+
+<h2>
+\[ \vec{a} + s(\vec{b-a}) = \vec{b} + t\vec{(d-c)} \]
+</h2>
+
+With the constraints that
+<h2>
+\[ 0 \leq t \leq 1 \]
+</h2>
+
+<h2>
+\[ 0 \leq s \leq 1 \]
+</h2>
+
+The picture below depicts this setup for two non-intersecting line segments (no solution)<BR><BR>
+<img src = "LineSegmentsParam.svg"><BR><BR>
+
+When <code>s = 0</code>, we are at the endpoint <code><b>a</b></code> of segment <code><b>ab</b></code>, and when <code>s = 1</code>, we are at the endpoint <code><b>b</b></code>.  Same story for <code>t</code> of segment <code><b>cd</b></code>
+
+</p>
+
+<h3><a name = "#skew">3D And Skew Lines</a></h3>
+
+This exact scenario as described won't quite work for 3D line segments, because there are ways that two non-parallel lines can completely miss each other.  These are called <b>skew lines</b>.  Here's an example of two line segments that line on skew lines:<BR><BR>
+
+<img src = "SkewLines.svg"><BR><BR>
+
+<BR><BR>
+When viewed from this angle, the red line goes underneath the blue line.  To check for skew lines, there's a simple test involving the cross product.  Take the cross product between the vector from <b>a</b> to <b>b</b> and the vector from <b>c</b> to <b>d</b>.  If these line segments are part of lines which intersect, then these vectors will be on the same plane, and the cross product will give the plane normal (vector perpendicular to the plane, which we'll talk more about on Tuesday).  This means that the difference between any point from the first line and any point from the second line will lie in the plane perpendicular to that cross product, and so the dot product of the difference of any two such points with that cross product is zero.  The picture below depicts this, showing how a vector from <b>c</b> to <b>b</b> is perpendicular to the cross product <b>n</b>:<BR><BR>
+
+<img src = "skewLinesDetect.svg">
+<BR><BR>
+
+If the dot product is not zero, then the lines do not lie in the same plane and are hence skew lines.  Check for this before applying the techniques above for 3D line segments.  You will also have to slightly tweak Cramer's rule to account for the fact that there are 3 equations in 2 variables (though if the lines are in the same plane, there is a "linear dependence" between them that causes there to really only be two equations).
+
+<p>
+<b>NOTE:</b> Randomly sampling from the space of lines will give you skew lines with probability 1.  But we're often dealing with scenarios in 3D where although the coordinates are in 3D, we're working on some plane that lives in 3D space.  Skew lines haven't been that common in geometry applications in my experience
+</p>
+
+<p>
+Just one more quick word about this and then we can move on.  Why didn't I use the equations <b>y = mx + b</b>?  Well what if the line is vertical?  Then <b>m</b> is infinity.  And if the line is close to vertical, then <b>m</b> can become very large and make the computation numerically unstable.  The parametric form is quite nice because it is agnostic to direction and it generalizes easily to higher dimensions.
+</p>
+
+<BR><BR><HR>
+<h1><a name = "circumcenters">Triangle Circumcenters</a></h1>
+
+Now we're going to switch to talking about the <b>triangle circumcircle</b>, which is the unique circle that contains all points on the triangle.  But first, we need to talk about circles.
+
+<div id = "definition">
+
+<h3><u>Definition 1: Circle</u></h3>
+A <b>circle</b> in the 2D plane with a center <b><code>c</code></b> and a radius <code>r</code> is the set of all points that are of distance <code>r</code> from <b><code>c</code></b>.  Mathematically, by the Pythagorean theorem, they are the points that satisfy the equation
+
+<h2>
+\[ (x - c_x)^2 + (y - c_y)^2 = r^2 \]
+</h2>
+for center <code><b>c</b> = (c<SUB>x</SUB>, c<SUB>y</SUB>)</code> and radius <code>r</code>.  This equation is known as the <i>implicit form of a circle</i>.
+
+</div>
+
+To make use of the vector math we just learned, we can also define a circle <i>parametrically</i> as we did with the line segments, as shown in the picture below:<BR><BR>
+<img src = "CircleParametric.svg">
+<BR><BR>
+That is, given a center <b>c</b>, a radius <code>r</code>, and an angle <code>theta</code>, this picks out the point
+
+<h2>
+\[ \vec{c} + (r \cos(\theta), r \sin(\theta)) \]
+</h2>
+
+<p>
+Note that there are 3 numbers we need to uniquely determine a circle.  Another way of saying this is that <i>a circle has <b>three degrees of freedom</b></i>.  This means that to determine a circle, we need exactly three constraints.  Well, a triangle has three points, so that means we must be able to find a unique circle that goes through those points:
+</p>
+
+<div id = "definition">
+
+<h3><u>Definition 2: Triangle Circumcircle / Circumcenter</u></h3>
+For a triangle with points <b>a</b>, <b>b</b>, and <b>c</b>, the <i>triangle circumcircle</i> is the unique circle with center <b>p</b>, called the <i>circumcenter</i>, and radius <code>r</code> such that
+
+<h2>
+\[ d(\vec{a}, \vec{p}) = d(\vec{b}, \vec{p}) = d(\vec{c}, \vec{p}) = r \]
+</h2>
+
+Where <b>d(x, y)</b> is the distance between points <b>x</b> and <b>y</b>
+
+</div>
+<BR><BR>
+
+One amazing geometric fact about triangle circumcenters is that they lie on the intersection of the perpendicular bisectors of the three sides, as shown in the picture below (circumcenter drawn in red):<BR><BR>
+
+<img src = "triangleCircumcenterSketch.svg"><BR><BR>
+
+This is actually not too hard to see from the definitions.  
+<ul>
+<li>First, note that the perpendicular bisector of a line segment <b>ab</b> contains all points which are equidistant from <b>a</b> and <b>b</b>.
+</li>
+<li>Similarly, the perpendicular bisector of the line segment <b>bc</b> contains all points which are equidistant from <b>b</b> and <b>c</b>.</li>
+<li>A point which is on the intersection of two lines is contained in both, which means that a point at the intersection of the perpendicular bisector of <b>bc</b> and the perpendicular bisector of <b>ab</b> is equidistant from <b>b</b> and <b>c</b> but also equidistant from <b>a</b> and <b>b</b>.  Therefore, it's equidistant from all three!</li>
+</ul>
+
+Note that all three perpendicular bisectors intersect at the common point, but for computational purposes it's fine to compute the intersection of just two, since we know the third will coincide.<BR><BR>
+
+<div id = "demo">
+
+<h2><a name = "circumcenterdiscovery">Interactive Demo: Circumcenter Discovery</a></h2>
+
+
+This demo provides an interactive proof of the fact that the perpendicular bisectors of any two of the sides intersect at the triangle circumcenter.  
+
+<ul>
+<li>Click "choose points" and select three points by left clicking (right click to delete the most recently selected point).</li>
+<li>Once three points are chosen all of the perpendicular bisectors will be drawn.  Then click "drag mouse."  The program will snap the mouse to the nearest perpendicular bisector and draw a circle centered on the bisector and intersecting the two points that make it up to illustrate the fact that every point on the bisector is equidistant to those two points.</li>
+<li>When the mouse is dragged close to the circumcenter, all three points will be highlighted and you will notice that the circle contains all three.</li>
+</ul>
+
+<table>
+<tr>
+<td>
+
+<button type = "button" onclick = "choosePoints()">Choose Points</button>
+
+<BR><BR>
+<button type = "button" onclick = "dragMouse()">Drag Mouse</button>
+
+</td>
+<td>
+<canvas id = "segcanvas" width = "600" height = "600" style="border:1px solid #000000;">
+</canvas>
+</td>
+</tr>
+</table>
+<script src= "CircumcenterDiscovery.js"></script>
+
+</div>
+<BR><BR>
+
+Note that some care has to be taken with obtuse triangles, because the circumcenter lies outside of the triangle, as shown below in a screenshot from the demo program:<BR><BR>
+
+<img src = "ObtuseTriangle.png"><BR><BR>
+
+This will be important in applications later in the course when we talk about Voronoi areas in the "stretchy shapes" unit.<BR><BR>
+
+Note also that this process can be continued recursively into higher dimensions.  For instance, for four noncoplanar points in 3D that span a <a href = "https://en.wikipedia.org/wiki/Tetrahedron">tetrahedron</a>, it is possible to find a circumsphere containing all 4 points by intersecting two lines that are perpendicular to two of its triangle faces and which go through the circumcenters of the respective faces:<BR><BR>
+
+<img src = "tetrahedralCircumsphere.svg">
+
+<BR><BR>
+A sphere has 4 degrees of freedom so it makes sense that we would need 4 independent points to determine one.  If I were to make a demo like the one for the circumcircle, I would be sliding a sphere along one of those blue lines which always touched at least three points, and which would touch all four points at the circumsphere center.
+  
+<BR><BR><HR>
+<h1><a name = "delaunay">Delaunay Triangulation</a></h1>
+
+Now we know enough to define what's called a <b>Delaunay Triangulation</b> (pronounced "Duh Lawn A") of a set of points in 2D.  But first, what is a triangulation of a point set?  
+
+<div id = "definition">
+<h3><u>Definition 2: Triangulation</u></h3>
+A triangulation of a point set <b>P</b> in 2D is a collection of triangles connecting points in <b>P</b> so that ever point is on at least one triangle and no triangle intersects the interior of another.
+</div>
+
+<BR><BR>
+Towards the end of the second unit we will talk about how to add triangles to points in 3D, but for now we focus on the 2D case.  Take the point set below, for example:<BR><BR>
+<h3>Point Set</h3>
+<img src = "PointSet1.png"><BR><BR>
+
+Here is one possible triangulation:<BR><BR>
+<h3>Example Triangulation</h3>
+<img src = "PointSetTri1.png"><BR><BR>
+
+This is perhaps not a great triangulation, though.  This is mainly because we tend to prefer triangles that are as close to equilateral as possible, and we conversely tend to not like triangles which are long and skinny.  This is because we sometimes want to use the triangulation to help interpolate function values, and having a long skinny triangle means the function likely varies much more along one direction than the other, making that a bad approximation.  Below shows the <b>Delaunay Triangulation</b> of the same point set:<BR><BR>
+
+<h3>Delaunay Triangulation</h3>
+<img src = "PointSetDelaunay.png"><BR><BR>
+
+These triangles look a lot more even.  Here's the definition of a Delaunay Triangulation 
+<div id = "definition">
+<u><h3>Definition 3: Delaunay Triangulation</h3></u>
+
+A <i>Delaunay Triangulation</i> of a point set <b>P</b> is a triangulation of <b>P</b> having the property that the circumcircle of every triangle is empty; that is, no point in <b>P</b> is contained in the interior of any triangle's circumcircle (only on the borders).
+
+</div>
+<BR><BR>
+Here is a picture showing the circumcircles superimposed over every triangle in the Delaunay triangulation above (verify that no circle contains any of the black points):<BR><BR>
+
+<img src = "PointSetCircumcircles.png"><BR><BR>
+
+Therefore, a brute force algorithm for computing a delaunay triangulation on a point set of size <b>N</b> would be to try out all triples of points, compute their circumcircles, and check to see if any of the points lie in its interior.  If not, then keep the triangle.  This takes <b>O(N<SUP>4</SUP>)</b> time because there are <b>O(N<SUP>3</SUP>)</b> triangles, and for each triangle we need to test all <b>N</b> points to see if any are contained in the circle (I'm sweeping some issues about uniqueness of the triangulation under the rug but that's the idea)<BR><BR>
+
+Delaunay triangulations have lots of amazing properties.  Two of the most important ones are
+<ol>
+<li>The Delaunay triangulation maximizes the minimum angle over all of the triangles in the triangulation, out of all possible triangulations.  This is exactly what we wanted in our laundry list, of not having too many long and skinny triangles, and you can see above that the triangulation looks much nicer and cleaner<BR><BR></li>
+
+<li>
+The boundary of the Delaunay Triangulation is always the <b>convex hull</b>, or the minimum enclosing <a href = "https://en.wikipedia.org/wiki/Convex_set">convex region</a> of the points in the point set.  That is, if you take a rubber band and stretch it around all of the points, and then snap it in place, it will coincide with the boundary of the Delaunay triangulation.  Convex approximations of points sets are very useful, as we will see next lecture, so it's nice that we can guarantee that we get the tightest fitting convex shape possible around the points.<BR><BR>
+<table>
+<tr><td><img src = "PointSetDelaunayConvex1.png"></td>
+<td><img src = "PointSetDelaunayConvex2.png"></td>
+</tr>
+</table>
+</li>
+</ol>
+
+<div id = "demo">
+
+<h2><a name = "delaunaydemo">Interactive Demo: Delaunay Circumcircles</a></h2>
+<div id = "demo">
+
+
+
+<table>
+<tr>
+<td>
+
+<button type = "button" onclick = "choosePointsD()">Choose Points</button>
+
+<BR><BR>
+<button type = "button" onclick = "doDelaunay()">Do Delaunay</button>
+<BR><BR>
+
+<table>
+<tr><td>Display Circles</td><td>
+<input type="checkbox" id="displayCirclesCheckbox" />
+</td></tr>
+
+<tr><td>Display Centers</td><td>
+<input type="checkbox" id="displayCentersCheckbox" />
+</td></tr>
+</table>
+
+</td>
+<td>
+<canvas id = "delcanvas" width = "600" height = "600" style="border:1px solid #000000;">
+</canvas>
+</td>
+</tr>
+</table>
+
+<script src = "DelaunayDemo.js"></script>
+
+
+
+</div>
+</h2>
+
+</div>
+
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="index.html">General</a></li>
+<li><a href = "syllabus.html">Syllabus</a></li>
+<li><a href = "assignments.html">Assignments</a></li>
+<li><a href = "finalproject.html">Final Project</a></li>
+<li><a href = "raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+
+<div id="page-content">
+
+<h1>Assignments</h1>
+
+<h2>General Policies</h2>
+
+<h3>Batch Tests</h3>
+<p>
+A portion of the grade for each assignment involving programming will be determined automatically by running batch tests on the submitted code and comparing to the correct solutions.  The tests will not be known ahead of time, but they will be published after everyone has submitted their assignments, following a model similar to <a href = "https://community.topcoder.com/tc?module=Static&d1=help&d2=ratedEvent">Top Coder</a>.  Failing those tests will impact the final score of the assignment, but partial credit may still be awarded.  Groups with particularly clean or efficient code will also receive a bonus.  On the point cloud retrieval assignment, those with the highest accuracy will also receive a bonus.
+</p>
+
+<h3><a name = "artcontest">Art Contests</a></h3>
+<p>
+There will also be an "art contest" for all of the large assignments and some of the small ones.  This can include "bloopers" (bugs in 3D code tend to look pretty interesting) or an intentional creative use of the assignment.  Students will receive <a href = "raffle.html">raffle points</a> for any submission whatsoever into the art contest, and the winner (as determined by a panel of anonymous judges) will receive additional raffle points.  As explained on the general overview page, the programming language of choice will be Javascript, with one notable exception in Python for the point cloud classification assignment.  As a result, all art contest submissions can (and should) run in the browser.  Art contest and competition results will be showcased on the course web site along with student names (or pseudonyms if preferred).
+</p>
+
+<hr>
+<h2>Group Programming Assignments</h2>
+
+<p>
+There will be three large programming assignments spaced as equally as possible throughout the semester.  Each assignment will have a mandatory set of tasks and an optional set of tasks, each with a different score, from which a total number of points must be reached.  This will allow students to explore their interests beyond the basics of each assignment.  Any extra points will go towards an exponentially decreasing amount of extra credit.  The assignments will be done in groups of 2 or 3.  Groups of 3 will be expected to complete a higher number of baseline points.  <b>Do not save these assignments for the last minute</b>.  Groups are given several weeks for each assignment, anticipating some possible hefty debugging, which will be facilitated by group discussions on Piazza.  This also allows for more exploration and a better final product
+</p>
+
+
+</ul>
+
+
+<ul>
+<!--Have first assignment mirror http://run.usc.edu/cs520-s15/assign2/!-->
+<!--<li><b>Programming Assignment 1: Animating Surfaces from Motion Capture Data</b><BR>-->
+<!--Students will apply their knowledge of quaternions and rotation matrices to animate a hierarchy of bones on a human skeleton from motion capture data, and they will use these skeletons to morph the surface of a human body to match the motion.<BR><BR>-->
+<!--</li>-->
+
+<li><b><a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1: Image Sources for Acoustic Simulations (100 Points)</a></b><BR>
+Groups will use the image sources algorithm to model all specular reflections in a virtual environment modeled by a scene graph of polygon meshes. At the end it will be possible to hear what music sounds like played on arbitrarily-placed boom box in many different types of environments, including large cities, elliptical whisper chambers, and high reverb rooms
+<h3><a href = "Assignments/Group1_ImageSources/ArtContest">Click here</a> to see the art contest results!</h3>
+
+<BR>
+</li>
+
+<li><b><a href = "Assignments/Group2_ShapeGoogle">Group Assignment 2: "Shape Google": Point Cloud Descriptors for Shape Retrieval (100 Points)</a></b><BR>
+Groups will apply their knowledge of point cloud descriptors to develop algorithms to classify point clouds into shape categories, and there will be a competition to see which group can best classify an unknown set of point clouds by combining different descriptors and figuring out which distance metrics are the most discriminative.  <i>This is the only assignment that will be done in Python/Numpy/Scipy instead of Javascript due to its highly numerical nature and the present lack of refined numerical tools for Javascript</i><BR>
+
+<h3><a href = "Assignments/Group2_ShapeGoogle/ClassificationContest">Click here</a> to see the classification contest results!</h3>
+
+<BR>
+</li>
+
+<!--<li><b>Group Assignment 3: Volumetric Meshes and Boolean Shape Operations</b></li>-->
+<!--Groups will rasterize surface meshes into volumetric meshes, where they can easily perform boolean "shape algebra" (intersect, difference, union) between two shapes, and they will convert them back to surface meshes with the marching cubes algorithm.  By the end of this assignment, students will be able to geometrically replicate <a href = "https://www.youtube.com/watch?v=RJ28rJCutMc">this scene</a> from the critically acclaimed film <i>Kung Pow</i> by taking the "XOR" (difference) between a human model and a cylinder.<BR><BR>-->
+<!--</li>-->
+
+<li><b><a href = "Assignments/Group3_LaplacianMesh">Group Assignment 3: Laplacian Meshes (100 Points)</a></b> <BR>Groups will create an interactive application which allows users to click and drag points on a surface to induce graceful nonrigid deformations.  With this implemented, students will be able to do things such as make the wings on a 3D bird flap or make a person's nose into a "Pinnocchio nose."  They will also be able to smoothly color the surface of the mesh, simulate heat flowing across it, and wrap textures around it, to name a few other applications in the assignment<BR><BR></li>
+
+<h3><a href = "Assignments/Group3_LaplacianMesh/ArtContest">Click here</a> to see the art contest results!</h3>
+
+</ul>
+
+<hr>
+<h2>Individual Mini Assignments</h2>
+In addition to the larger group assignments which take a few weeks, there will also be a number of small individual assignments peppered throughout the course to keep everyone on the same page.  These assignments are expected to take roughly one week each, and they will include a smaller amount of programming and/or some pen and paper (or LaTeX!) math.
+<BR><BR>
+Below are the list of mini assignments by unit (list evolving).  Art contests will be held for bolded assignments
+<h3>Unit 1: Geometric Primitives and Shape Transformations</h3>
+<ul>
+<li><a href = "Assignments/Mini1_GeometricPrimitives">Geometric Primitives (40 Points)</a></li>
+<li><a href = "Assignments/Mini2_EulerAngles">Euler Angles Visualization (15 Points)</a></li>
+<li><b><strike>Rotations and Quaternion Interpolation</strike></b></li>
+</ul>
+
+<h3>Unit 2: Point Clouds and Shape Matching</h3>
+<ul>
+<li><b><a href = "Assignments/Mini3_ICP">Iterative Closest Points (55 Points)</a></b> <BR><h3><a href = "Assignments/Mini3_ICP/ArtContest">Click here</a> to see the art contest results!</h3>
+</li>
+</ul>
+
+<!--<h3>Unit 3: Manifold Surface Representations and Topology</h3>-->
+<!--<ul>-->
+<!--<!--<li><b>Surfaces of Revolution</b> (35 Points)</li>-->-->
+<!--<li>Written Topology Exercises (25 Points)</li>-->
+<!--<li>Implicit Surfaces (25 Points)</li>-->
+<!--</ul>-->
+
+<!--<h3>Unit 4: Nonrigid Geometry</h3>-->
+<!--<ul>-->
+<!--<li><b>Canonical Forms (20 Points)</b></li>-->
+<!--</ul>-->
+
+<!--<hr>-->
+<!--<h2>Paper Summary</h2>-->
+<!--<p>-->
+<!--Each student will be expected to read at least one paper on the syllabus in depth and to summarize that paper in detail in a document submitted by the end of the course. Ideally students will read more, but this is the bare minimum!  The purpose of this assignment is to show students that although reading papers may seem scary, it is very doable.  It just takes a serious commitment to sit down and focus for a few hours when starting in a new field, and to give one's self permission to be confused.-->
+<!--</p>-->
+
+<!--<p>-->
+<!--Paper summaries will appear on the course web page at the end of the course.  If there are multiple submissions for the same paper, the student with the best submission will receive raffle points.-->
+
+</p>
+
+</div>
+
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

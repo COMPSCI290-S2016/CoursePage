@@ -1,0 +1,154 @@
+/****************************************************************************/
+/*CSS layout borrowed heavily from http://pointclouds.org.  (I'm no artist!)*/
+/****************************************************************************/
+
+body {
+	background-color: #F0F0F0;
+	margin: 0;
+	padding: 0;
+	font-family: "Droid Sans", "DejaVu Sans", "Arial", sans-serif;
+	font-size: 13px;
+	height: 100%;
+	width: 1200px;
+}
+
+a {
+	color : #000000;	
+}
+
+a:visited {
+	color : #000000;	
+}
+
+a:hover {
+	color : #A0A0A0;	
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 90%;
+	position: relative;
+	height: 100%;
+}
+
+
+#menu-bar {
+	background-color: #EE9900;
+	padding: 20px 20px;
+	font-size: 1.4em;
+	text-align: center;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-bottomright: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+.menus-level0 {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menus-level0 li {
+	display: inline;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+}
+
+.menus-level0 a {
+	padding-left: 10px;
+	color: black;
+	text-decoration: underline;
+}
+
+.menus-level0 .active a {
+	color: rgb(230,230,230);
+}
+
+.menus-level0 a:hover {
+	color: #A0A0A0;
+}
+
+
+.box-see-more a {
+	padding-left: 10px;
+	color: black;
+	text-decoration: underline;
+}
+
+.box-see-more a:hover {
+	color: #A0A0A0;
+}
+
+#pagetitle {
+	clear:both;
+	background: #FFCC33;
+	padding: 15px 40px;
+	color: white;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+}
+
+#pagetitle h1 {
+	margin: 0;
+	font-size: 2em;
+	font-weight: bold;
+	font-family: "Droid Serif", "DejaVu Serif", "Garamond", serif;
+}
+
+#page-content {
+	font-family: "Droid Sans", "DejaVu Sans", "Arial", sans-serif;
+	font-size: 15px;
+	-moz-border-radius-bottomright: 15px;
+	-moz-border-radius-bottomleft: 15px;
+	-moz-border-radius-topright: 15px;
+	-moz-border-radius-topleft: 15px;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 15px;
+	background-color: #FFEE66;
+	color: black;
+	padding: 15px 40px;
+	padding-top: 5px;
+	min-height: 80%;
+}
+
+#page-content a {
+	color: #000000;
+	text-decoration: underline;
+}
+
+#page-content a:hover {
+	color: #A0A0A0;
+}
+
+#tips {
+	margin: 0;
+	color: rgb(0, 0, 100);
+	font-family: "Droid Serif", "DejaVu Serif", "Garamond", serif;
+}
+
+#definition {
+	margin: 10;
+	border: 10;
+	padding: 10;
+	background: rgb(255, 240, 255);
+	color: rgb(0, 0, 150);
+}
+
+#theorem {
+	margin: 10;
+	border: 10;
+	padding: 10;
+	background: rgb(255, 240, 255);
+	color: rgb(0, 0, 150);
+}
+
+#demo {
+	background: rgb(255, 240, 255);
+	color: rgb(0, 0, 150);
+}

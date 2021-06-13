@@ -1,0 +1,122 @@
+\documentclass{article}
+% Change "article" to "report" to get rid of page number on title page
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{setspace}
+\usepackage{Tabbing}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage{chngpage}
+\usepackage{soul,color}
+\usepackage{graphicx,float,wrapfig}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{enumitem}
+
+\newcommand{\field}[1]{\mathbb{#1}}
+
+% In case you need to adjust margins:
+\topmargin=-0.45in      %
+\evensidemargin=0in     %
+\oddsidemargin=0in      %
+\textwidth=6.5in        %
+\textheight=9.0in       %
+\headsep=0.25in         %
+
+
+\title{COMPSCI/MATH 290-04 Background Knowledge Assessment }
+\date{1/14/2016}
+
+\begin{document}
+\begin{spacing}{1.1}
+
+\maketitle
+
+Fill out the answers to the questions below to the best of your ability.  If you do not know how to approach a particular question, please skip and do not guess.  {\em This is completely anonymous and ungraded!}
+
+\begin{enumerate}
+
+\item %Problem 1
+
+What is the unit normal of the triangle with vertices $(-1, 0, 0)$, $(1, 0, 0)$, $(0, 1, 0)$?
+\begin{description}
+\item[] \leavevmode \\
+\end{description}
+
+\item %Problem 2
+
+Circle the letters corresponding to pairs of vectors which are perpendicular
+
+\begin{enumerate}[label=\alph*.]
+
+\item %Yes 
+
+$(1, 1, 0)$ and $(0, 0, 1)$
+
+\item
+
+$(-1, 1, 0)$ and $(1, -1, 0)$ %No
+
+\item 
+
+$(-2, 1, 0)$ and $(1, 2, 0)$ %Yes
+
+\item
+
+$(1, 2, 1)$ and $(-3, 1, 1)$ %Yes \\
+
+\end{enumerate}
+
+\item
+What is parallel projection of the vector $(1, 1, 3)$ onto the vector $(1, 1, 1)$?  %Answer: (5/3, 5/3, 5/3)
+
+\begin{description}
+\item[] \leavevmode \\
+\end{description}
+
+\item
+
+Fill in the blank: $ e^{i \theta} = \cos(\theta) + $ \underline{\hspace{3cm}} \\
+
+\item
+Circle the letters below corresponding to vectors which are eigenvectors of the matrix $ \left[ \begin{array}{cc} 2 & 3 \\ 0 & -3 \end{array} \right]$
+
+\begin{enumerate}[label=\alph*.]
+
+\item $(2, 1)$
+
+\item $(1, 0)$
+
+\item $(0, 3)$
+
+\end{enumerate}
+
+
+\item
+The Fourier Transform of $\delta(t)$ is \underline{\hspace{3cm}} \\
+
+\item
+Circle one of the items below that best approximates your plans for the class
+
+\begin{enumerate}[label=\alph*.]
+
+\item I am enrolled in the class and plan to stay
+
+\item I am enrolled in the class but I may drop
+
+\item I am not enrolled in the class but would like to enroll. (Are you on the waitlist?  YES/NO)
+
+%\item I anm not enrolled in the class and do not plan to enroll
+
+\end{enumerate}
+
+
+\item Please write an "M" under the times you could attend office hours on Mondays and a "W" under the times you could Wednesday
+
+(9AM-10AM)   (10AM-11AM)   (11AM-12PM)  (12PM-1PM)  (1PM-2PM)  (2PM-3PM)  (3PM-4PM)  (4PM-5PM)
+
+\end{enumerate}
+
+\end{spacing}
+\end{document}

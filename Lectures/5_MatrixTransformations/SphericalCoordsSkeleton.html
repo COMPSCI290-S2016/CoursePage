@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src = "plotly.min.js"></script>
+<body>
+
+<h2><a name = "angle">Sphere Plotting</a></h2>
+
+<table>
+<tr>
+<td>
+
+<div id = "angleVis">Visualization goes here once you compute the angle</div>
+
+
+<script>
+    var pointCloud = { x: [ax, cx], y: [ay, cy], z: [az, cz],
+      mode: 'lines', line: {color: '#555555', width: 10},
+      type: 'scatter3d', name: 'ac',
+    };
+    var axes = getAxesEqual([a, b, c]);
+    var data = [aviz, bviz, cviz, abviz, acviz];
+    var layout = {
+      autosize: false, width: 500, height: 500,
+      margin: { l: 0, r: 0, b: 0, t: 65 }
+    };
+    Plotly.newPlot('angleVis', data, layout);    
+}
+
+</script>
+
+
+</body>
+</html>

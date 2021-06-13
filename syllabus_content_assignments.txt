@@ -1,0 +1,60 @@
+Send Chris E-Mail With Office Hour Times
+
+2016-01-14
+<a href = "Assignments/Mini1_GeometricPrimitives">Mini Assignment 1 Out</a> (<i>Geometric Primitives</i>)
+
+2016-01-19
+<a href = "Assignments/Mini1_GeometricPrimitives">Mini Assignment 1</a> Part 1 Due 11:55 PM
+
+2016-01-24
+<a href = "Assignments/Mini1_GeometricPrimitives">Mini Assignment 1</a> Part 2 Due 11:55 PM
+
+2016-01-29
+<a href = "Assignments/Mini2_EulerAngles/">Mini Assignment 2</a> Out (<i>Euler Angles Visualization</i>)
+
+2016-02-02
+<a href = "Assignments/Mini2_EulerAngles/index.html">Mini Assignment 2</a> Due 11:55PM<BR>
+
+2016-02-08
+<a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1 Out</a> (<i>Image Sources for Acoustic Simulations</i>)<HR>
+
+2016-02-09
+<a href = "http://s2016.siggraph.org/student-volunteers">SIGGRAPH Student Volunteer Application</a> Due (Optional)<BR>
+
+2016-02-09
+<a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1 Part 1 Due</a>
+
+2016-02-22
+Begin Choosing Final Projects / Groups
+
+2016-02-23
+<a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1</a> Hackathon<BR><b>4PM - 10PM Gross Hall 330</b>
+
+2016-02-27
+<a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1 Final Deadline</a>
+
+2016-03-02
+<a href = "Assignments/Mini3_ICP">Mini Assignment 3 Out</a> (<i>Iterative Closest Points</i>)
+
+2016-03-04
+Submit Final Project Topic Choices
+
+2016-03-05
+<a href = "Assignments/Mini3_ICP">Mini Assignment 3 Due</a> 
+
+2016-03-12
+<a href = "Assignments/Group2_ShapeGoogle">Group Assignment 2</a> Out
+
+2016-03-14
+<a href = "Assignments/Group2_ShapeGoogle">Group Assignment 2</a> Due
+
+2016-03-30
+<a href = "Assignments/Group3_LaplacianMesh">Group Assignment 3</a> Out
+
+2016-04-12
+<a href = "Assignments/Group3_LaplacianMesh">Group Assignment 3</a> Deadline 1 11:55 PM
+
+2016-04-18
+<a href = "Assignments/Group3_LaplacianMesh">Group Assignment 3</a> Final Deadline 11:55 PM
+
+2016-04-26

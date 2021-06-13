@@ -1,0 +1,38 @@
+Announcement: Only 2D circumcenter
+
+1) Cross product definition review
+
+2) Go over 2D line segment intersection
+-Mention CCW
+
+-Cramer's rule for 2D line segment intersection
+
+-Extension to 3D (adding)
+
+-Problems with 3D (skew lines)
+
+-Show what happens with numerical precision if trying to use slope
+
+
+
+3) Go over triangle circumcenter
+-Question to class: How many degrees of freedom needed to represent circle in the plane? (have class vote?)
+-Present algebraic and vector form equations for circle
+-Raffle point question: have a group find an example of a triangle where a circumcenter is outside
+
+*Show Delaunay triangulation
+-Note that the boundary is the convex hull
+-Draw dual on the board
+-Explain brute force algorithm
+
+
+
+
+
+
+
+
+Time Permitting:
+*Highlight the importance of using graphics to help debug.  Show real time example with triangle circumcenter.  Put up vec3 documentation on one screen
+
+*Note on numerical precision

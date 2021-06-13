@@ -1,0 +1,34 @@
+Part 1:
+
+1) Points/Vectors
+-Addition and subtraction (mention type checking)
+-Magnitude
+-Normalization
+-A note on coordinate systems and the right hand rule (anecdote)
+*Define dot product and show law of cosines
+-Talk about principal value set of cosine and how it flips back around when passing 180
+
+2) Projections
+-Show GUI example
+-Raffle point question: projecting one vector onto another
+
+
+3) Line Segment Intersection
+-Make the point that using slope and y intercept can be numerically unstable near vertical slopes
+
+4) Point Inside Triangle (BQOTD)
+
+
+5) Intro To Javascript
+*Take anonymous poll: who has seen HTML?
+Implement the big question of the day in Javascript real time
+-Fallback: Implement vector projection
+
+6) Mini Assignment 1
+
+Part 2:
+*Define matrix determinant, show area/volume properties
+*Define cross product
+*Define normals
+*Define planes
+*Triangle circumcenter

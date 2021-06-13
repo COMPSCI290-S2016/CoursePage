@@ -1,0 +1,53 @@
+<!--Programmer: Chris Tralie!-->
+<!--Purpose: To create a "wheel of fortune" app to randomly call on students!-->
+<html>
+<head>
+<script src = "WheelOfFortune.js"></script>
+<body>
+<h1>Wheel of Fortune Random Roster Calling</h1>
+With Harry Potter student names!  Pick a lecture number and hit the Spin button below!<BR><BR>
+
+<canvas id = "wof" width = "800" height = "800" style="border:1px solid #000000;">
+</canvas><BR>
+<table><tr><td><h3>Lecture Number</h3></td><td><input type="text" id = "lecNum"></input></td></tr></table>
+<button type = "button" onclick = "doSpin()">Spin</button>
+
+<script>
+requestAnimationFrame(drawWheel);
+
+function doSpin(evt) {
+    angle0 = angle % (2*Math.PI);
+    var lecNum = document.getElementById("lecNum");
+    var lecNumVal = perm[parseInt(lecNum.value)];
+    
+    //Given a final angle on which to land and a target time during which to do it..
+    var NSpins = 1 + Math.round(Math.random()*5);
+    finalAngle = 2*Math.PI*(NSpins + (lecNumVal + 0.5)/names.length);
+    targetTime = 5 + 5*Math.random();
+    //Need to solve for initial angular velocity and constant angular acceleration
+    omega0 = 2*(finalAngle - angle0)/targetTime;
+    alpha = omega0/targetTime;
+    
+    spinning = true;
+	startTime = Date.now();
+	requestAnimationFrame(drawWheel);
+}
+</script>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+
+</body>
+</html>

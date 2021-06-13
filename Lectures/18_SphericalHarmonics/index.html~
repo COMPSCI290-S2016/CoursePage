@@ -1,0 +1,116 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+<script src= "gl-matrix-min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../index.html">General</a></li>
+<li><a href = "../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../assignments.html">Assignments</a></li>
+<li><a href = "../../finalproject.html">Final Project</a></li>
+<li><a href = "../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Fourier Decomposition, Circular Functions, Spherical Harmonics</center></h1>
+
+<h2><a href = "slides.pdf">Click here</a> to see today's slides</h2>
+
+Here are some of the videos I showed today
+
+
+<h1><u>Fourier Decomposition Videos</u></h1>
+<table border = "1">
+<tr><td><h2><a href = 'Videos/Ramp.ogg'>Ramp.ogg</a></h2></td></tr>
+<tr><td>Showing the cosine and sine projections for the discrete fourier basis, and also showing the magnitude, for a ramp function which shifts.  Notice how the sine and cosine components change, but the magnitude doesn't at all.  This is because only the phase is changing as the function shifts</td></tr>
+<tr><td>
+<video controls>
+  <source src='Videos/Ramp.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'Videos/RampWindow.ogg'>RampWindow.ogg</a></h2></td></tr>
+<tr><td>Same as above, but showing two other periods of the ramp function to really drive home the point that we're assuming the signal repeats itself infinitely, and when we do a discrete Fourier decomposition we're just looking in a window equal to one period length</td></tr>
+<tr><td>
+<video controls>
+  <source src='Videos/RampWindow.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<h1><u>Circle Wrapping Videos</u></h1>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'Videos/CircleWrap.ogg'>CircleWrap.ogg</a></h2></td></tr>
+<tr><td>One way to think about what we're doing when we assume something repeats itself infinitely is that we can think about it as living on the circle, wrapping around over and over again.  The animation below shows how to warp from the domain of a line segment to a circle.</td></tr>
+<tr><td>
+<video controls>
+  <source src='Videos/CircleWrap.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'Videos/CircleShiftPerson.ogg'>CircleShiftPerson.ogg</a></h2></td></tr>
+<tr><td>Once we put functions on a circle, we can then view a phase shift as a rotation!  This leads us to the understanding that doing a Fourier decomposition of functions on the circle and recording the magnitudes only gives us a <i>rotation invariant</i> descriptor of shape</td></tr>
+<tr><td>
+<video controls>
+  <source src='Videos/CircleShiftPerson.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+<h1>Spherical Harmonics</h1>
+There's an analogous thing we can do to functions on a circle with functions on the sphere.  Instead of sinusoids, we instead get these <a href = "https://en.wikipedia.org/wiki/Spherical_harmonics">spherical harmonics</a>
+
+<h3><a href = "SphericalHarmonics.zip">Click here</a> to download meshes which represent some of the lower order spherical harmonics, as well as code used to generate them (using my Python mesh library and scipy)</h3>
+
+In those meshes I saved the real component of each spherical harmonic, but just as cosines and sines, there's a real and imaginary component, and we store the magnitude to describe functions along the sphere in a way which is invariant to 3D rotations (thinking of wrapping 2D functions around the sphere and shifting them around).  Have a look at section 4 pages 7-8 of <a href = "http://dpd.cs.princeton.edu/Papers/FunkShapeTog.pdf">this paper</a> to see how spherical harmonics are used to create a fancier type of shell histogram for 3D shapes.  The idea is exactly the same as before, but instead of simply counting the number of points that fall in each shell or recording PCA eigenvalues, you instead record the magnitude of the spherical harmonics.
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

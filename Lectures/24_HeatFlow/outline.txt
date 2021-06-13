@@ -1,0 +1,11 @@
+*Talk about functions on the mesh
+*Show homer X, Y, and Z with different colors
+*Talk about symmetry of cotangent weights
+
+*Linear combination of sinusoids
+*Riding roller coaster
+
+*1D heat flow equation
+-Generalize to laplacian, show solution
+
+*Define heat kernel signature

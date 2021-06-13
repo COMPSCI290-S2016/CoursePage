@@ -1,0 +1,38 @@
+*Final project rubric
+
+*Ask class if it's okay for assignment 3 to be in Python
+
+--------------
+*Motivate problem at a high level, show dragging vertex versus Laplacian warping
+-Explain how we try to retain relative information
+
+*Show the big picture of curvature of plane curves
+
+*Go into more detail: Define parameterized curves, show derivative of tangent is normal to tangent
+
+*Show discrete curvature estimate by difference of discrete derivatives on a 1D curve
+
+*Show curvature on surfaces, define mean curvature using Keenan Crane's figures
+
+*Define laplacian matrix carefully, show how it's like curvature
+
+*Show equivalent definition of graph laplacian (mention generalization)
+
+*Explain how this matrix has "rank N-1" (explain with the integral + C analogy)
+
+*Define anchors, define least squares solution
+
+*Show a bunch of examples
+
+*Explain how for irregular meshes, this doesn't really make sense, so need to use cotangent weights
+-Show my homer example
+*but also explain how cotangent weights become negative for obtuse angles
+
+*Show how the Laplacian is not rotation invariant
+(show octopus figures from Sorkine paper, and spikes)
+
+*Show applications (figures from paper)
+-detail transfer, mesh mixing, mesh smoothing
+
+*Show laplacian on images
+

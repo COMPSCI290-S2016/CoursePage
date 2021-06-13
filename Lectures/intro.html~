@@ -1,0 +1,80 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../main.css" />
+<link rel="icon" href="../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="index.html">General</a></li>
+<li><a href = "syllabus.html">Syllabus</a></li>
+<li><a href = "assignments.html">Assignments</a></li>
+<li><a href = "finalproject.html">Final Project</a></li>
+<li><a href = "raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Lecture 1: Course Sneak Preview, Equidecomposing Polygons</center></h1>
+
+Today's lecture was mostly spent on course policies and an overview of all assignments.  The main topic of instruction came from one of the possible final projects on "Equidecomposability."  We showed a constructive proof that for two polygons <b>A</b> and <b>B</b> with the same area, it is possible to cut <b>A</b> into a finite number of pieces that can be rigidly re-arranged like a puzzle to form polygon <b>B</b>.  This is known as the <a href = "http://en.wikipedia.org/wiki/Wallace%E2%80%93Bolyai%E2%80%93Gerwien_theorem">Wallace Bolyai Gerwein theorem</a>.
+
+
+
+
+
+
+
+https://en.wikipedia.org/wiki/Hinged_dissection
+
+The Dig
+https://www.youtube.com/watch?v=kTs2GIZVGoI&feature=youtu.be&t=21m28s
+
+Great explanation of banach tarski:
+https://www.youtube.com/watch?v=s86-Z-CbaHA
+
+(also look for infinite chocolate)
+
+
+http://www.reddit.com/r/woahdude/comments/366m5m/geometry_is_weird/
+
+<!--http://en.wikipedia.org/wiki/Tarski%27s_circle-squaring_problem-->
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,179 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<link rel="icon" href="../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="index.html">General</a></li>
+<li><a href = "syllabus.html">Syllabus</a></li>
+<li><a href = "assignments.html">Assignments</a></li>
+<li><a href = "finalproject.html">Final Project</a></li>
+<li><a href = "raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+
+<div id="page-content">
+<center>
+<h1>Digital 3D Geometry</h1>
+<h2>Instructor: <a href = "http://www.ctralie.com">Chris Tralie</a></h2>
+<h2><a href = "http://duke.edu/">Duke University</a></h2>
+<h2>Tuesday/Thursday 4:40 - 5:55 PM, Perkins LINK 071 (<a href = "https://link.duke.edu/classrooms#classroom5">Classroom 5</a>)</h2>
+<h2>Office Hours: Monday 12:30PM - 2:30PM PM, Thursday 9AM - 11AM, Gross Hall 324 (<a href = "GrossHallMap.jpg">map</a>)</h2>
+</center>
+<BR>
+
+<table>
+<tr>
+<td><img src = "statuehead.png"></td>
+<td colspan = "2"><img src = "deform.png"></td>
+<td><img src = "HeatKernel.png"></td>
+</tr>
+<tr>
+<td><img src = "imagesources.png"></td>
+<td><img src = "pca.png">
+<td><img src = "prst.png">
+<td><img src = "segmentation.png">
+</tr>
+</table>
+
+<!-- Start of Last Updated -->
+<h2><b>Course Evolving: Site Last Updated 5/5/2016
+</b></h2><!-- End of Last Updated -->
+
+<h2>Overview</h2>
+This hands on course will be a breadth-first introduction to the world of 3D geometry, as seen by a computer.  Students will learn how to represent, analyze, match, manipulate, and morph 3D shapes.  Students will also be introduced to a series of fun applications of digital geometry, such as <a href = "Assignments/Group1_ImageSources/spec.html">sound rendering</a>, <a href = "Assignments/Mini2_EulerAngles">3D rotation modeling</a>, <a href = "Assignments/Mini3_ICP">shape alignment</a>, <a href = "Assignments/Group2_ShapeGoogle">"Shape Google,"</a> and <a href = "Assignments/Group3_LaplacianMesh">shape stretching</a>, via a series of individual and group programming assignments in Javascript.  For engineering and computer science students, the course can serve as a safe, visually-oriented introduction to more advanced mathematical topics in geometry, such as linearity, manifolds, topological invariants of surfaces, isometries, duality, and symmetries. Conversely, for math majors, it can serve as a practical applications course and an opportunity to develop important programming skills, algorithmic thinking, and visualization tools.  The course will also include a semester-long open-ended group project.  Potential projects include automatically cutting virtual surfaces into each other, exploring virtual 3D shape collections, sonifying 3D geometry, modeling and animating structures in the Nasher museum, or other topics related to the course with permission of the instructor.
+
+<BR><HR>
+<h2>Sakai / Piazza</h2>
+<p>
+We will be using Sakai and Piazza in the course.  We will only be using the Sakai page to submit assignments and to store all of the grades. <a href = "https://sakai.duke.edu/portal/site/eddac41a-1607-4a1c-b09c-333b3364649b ">Click here</a> to visit the course Sakai web page. 
+</p>
+
+<p>
+For all other discussions and announcements for the course, we will be using Piazza.  <a href = "http://www.piazza.com/duke/spring2016/compsci29004/home">Click here</a> to visit the Piazza page for the course.  There you can ask and answer questions about the lecture content and assignments.  It will also be an important place for us to discuss Javascript idiosyncrasies and to coordinate group work.  Please also post there if you find any issues or mistakes on the web site, as that may be an opportunity for <a href = "raffle.html">raffle points</a>
+</p>
+
+<BR><HR>
+<h2>Readings</h2>
+There is no official textbook for the course, since it covers such a broad array of hand-picked topics.  Some of the original papers on the techniques that will be presented in the course are linked from the syllabus, and each student will be required to summarize at least one of the papers by the end of the semester.  If students would like to have a textbook, the two below are personal favorites of mine and would be the most useful references to go along with the course
+
+<ul>
+<li><b>[BRONSTEIN]</b>: Bronstein, Alexander M., Michael M. Bronstein, and Ron Kimmel. <i>Numerical geometry of non-rigid shapes</i>. Springer, 2008.</li>
+
+<li><b>[LENGYEL]</b>: Lengyel, Eric. <i>Mathematics for 3D game programming and computer graphics.</i> Cengage Learning, 2012. <BR><a href = "http://profs.info.uaic.ro/~ancai/CN/bibliografie/cuprins%20Mathematics%20for%203D%20Game%20Programming%20and%20Computer%20Graphics,%20Second%20Edition.pdf">Table of Contents</a></li>
+</ul>
+
+Also, there are similar courses that have run at many other universities.  None of them are exactly the same as this one, but they are all excellent resources and are worth a look, time permitting.  Keep in mind that COMPSCI/MATH 290-04 is an undergraduate course that goes over advanced topics at an introductory level, so some of these links are to graduate courses with followup material that is quite advanced
+
+<ul>
+<li><a href = "http://graphics.stanford.edu/courses/cs468-12-spring/">http://graphics.stanford.edu/courses/cs468-12-spring/</a></li>
+<li><a href = "http://www.cs.columbia.edu/~keenan/Projects/DGPDEC/">http://www.cs.columbia.edu/~keenan/Projects/DGPDEC/</a></li>
+<li><a href = "http://www.cs.princeton.edu/courses/archive/spring14/cos426/index.php">http://www.cs.princeton.edu/courses/archive/spring14/cos426/index.php</a></li>
+<li><a href = "http://www.cs.princeton.edu/courses/archive/fall14/cos526/index.php">http://www.cs.princeton.edu/courses/archive/fall14/cos526/index.php</a></li>
+<li><a href = "http://www.hao-li.com/Hao_Li/Hao_Li_-_teaching_%5BCSCI_599__Digital_Geometry_Processing_SS_2014%5D.html">http://www.hao-li.com/Hao_Li/Hao_Li_-_teaching_%5BCSCI_599__Digital_Geometry_Processing_SS_2014%5D.html</a>
+<li><a href = "http://www.cs.berkeley.edu/~jrs/mesh/">http://www.cs.berkeley.edu/~jrs/mesh/</a></li>
+<li>
+<a href = "http://www2.cs.uh.edu/~chengu/Teaching/Spring2013/Analysis_Spring2013.html">http://www2.cs.uh.edu/~chengu/Teaching/Spring2013/Analysis_Spring2013.html</a>
+</li>
+<li><a href = "http://www-bcf.usc.edu/~jbarbic/cs520-s15/">http://www-bcf.usc.edu/~jbarbic/cs520-s15/</a></li>
+<li><a href = "http://resources.mpi-inf.mpg.de/departments/d4/teaching/ss2012/geomod/">http://resources.mpi-inf.mpg.de/departments/d4/teaching/ss2012/geomod/</a></li>
+
+</ul>
+
+<hr>
+<h2>Prerequisites</h2>
+The only strict prerequisite is Data Structures and Algorithms (COMPSCI 201).  Basic familiarity with linear algebra and calculus 2 will help, but required math will be reviewed during the course as needed.<BR><BR>
+
+<hr>
+<h2>Programming Language</h2>
+Most assignments will be written in Javascript, but no assumption will be made about prior Javascript knowledge!  Those who can write code in any one of Java, C++, or Python can quickly learn the differences.  There are three main reasons for using Javascript in the course:
+<ol>
+<li>It is widely used in modern web programming, so it will be useful in many projects beyond this course</li>
+<li>It requires no special software to run, and it works in the browser.  As a result, it makes it easy to develop on nearly any computer, and it allows students to share their work online</li>
+<li>People on the more mathematical side get to learn powerful web graphics programming techniques for communicating their ideas in the future with live demos on their web sites, rather than static images</li>
+</ol>
+Students will make heavy use of the <a href = "http://glmatrix.net/">glMatrix</a> library.  Skeleton code with GUIs powered by <a href = "https://en.wikipedia.org/wiki/WebGL">WebGL</a> to render 3D shapes will be provided on most assignments<BR><BR>
+
+<b>NOTE: There will be one or two assignment in Python/Numpy, and plenty of guidance and sample code will be provided to those groups who are less familiar</b>
+
+<hr>
+<h2>Grading</h2>
+
+<h3>
+<table>
+<!--<tr><td>Group Programming Assignments &nbsp&nbsp&nbsp</td><td>40%</td></tr>-->
+<!--<tr><td>Individual mini Assignments</td><td>20%</td></tr>-->
+<tr><td>Invidiual And Group Programming Assignments</td><td>60%</td></tr>
+<tr><td>Final Project</td><td>30%</td></tr>
+<tr><td>Midterm Exam</td><td>5%</td></tr>
+<tr><td>Class Participation</td><td>5%</td></tr>
+<!--<tr><td>Wikipedia Edit / <a href = "http://www.theconceptsproject.com/">Concepts Project</a> Entry</td><td>5%</td></tr>-->
+</table>
+</h3>
+
+<HR>
+<h2>Classroom Participation</h2>
+Though much time will be spent on lecturing, this course will be more interactive than usual for an engineering/computer science course of this size.  The goal is to get everyone involved in their learning real time as much as possible.  <BR>
+<b>If a few students are participating disproportionately, the instructor reserves the right to use a  <a href = "WheelOfFortune/WheelOfFortune.html">wheel of fortune app</a> to randomly call on people from the roster.</b><BR><BR>
+
+<h3><a name = "raffle"></a>Raffle Points / Group Work</h3>
+In addition to ordinary participation that follows the natural rhythm of a lecture, most days there will be at least one "raffle point problem," which is a question that follows on the heels of newly presented material.  Students will split into groups of 4-5 and try to work through the problems together.  When a group of students believe they have figured out the answer, they raise their hand.  The other students can continue to work while the instructor verifies that the answer is correct.  If the answer is correct, the students present the answer to the class.  At that point, each student in the group receives a <a href = "raffle.html">raffle point</a> (please visit the <a href = "raffle.html">raffle</a> tab above for more information on raffle points).  If the group is not correct upon the instructor checking, then the groups continue this process until one gets it correct, and then the competition is over.<BR><BR>
+
+<b>The instructor reserves the right to shuffle seats at the beginning of class so that different students work together</b>
+
+<h3>Overall Participation Score</h3>
+The overall participation score will factor in general classroom attendance, and final project feedback, as explained on the <a href = "finalproject.html#presentations">final project page</a>.
+
+<BR><BR><HR>
+<h2>Late Days</h2>
+Individual mini assignments must be submitted on time.  For the larger group assignments, each group has 7 late days available to be used throughout the semester.  Use them or lose them.  They may be spread out over all the assignments or used all at once.  Groups will indicate how many late days they have used on each assignment.  The 7 day rule helps ensure that the instructor can get all of the large assignments graded in approximately a week in the case that a group takes all of the late days at once.  If groups are changed, then the new groups have the minimum number of late days remaining from all of the students in that group.<BR><BR>
+
+On the individual assignments, or on the large group assignments once all late days have been used, students will lose points at the following rate (unless an excuse from the dean is provided):
+<ul>
+<li>-5% for work submitted between 1 minute - 6 hours late</li>
+<li>-10% for work submitted up to 12 hours late</li>
+<li>-15% for work submitted up to 24 hours late</li>
+<li>-25% for work submitted up to 48 hours late</li>
+<li>-40% for work submitted up to 96 hours late</li>
+<li>-60% for work submitted more than 96 hours late</li>
+</ul>
+
+<hr>
+<h2>Collaboration Policy</h2>
+Students are allowed to work in groups of 2 to 3 on each of the 4 large programming assignments.  Ideally the groups will be fixed after the first assignment.  There will also be 5-6 mini assignments that are to be completed individually.  Communication between groups and students is allowed, but it is expected that every group/student's code will be completely distinct!  Please do not copy code off of the Internet (repurposing code from the Internet will probably make it harder anyway because the assignments are so specialized).
+
+<BR><BR>I will try to hold a few "hackathons" (extended office hours) throughout the semester to provide additional help with assignments and the final projects.  I want everyone to succeed, so there will be no reason to cheat!
+<BR><BR>
+
+
+
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

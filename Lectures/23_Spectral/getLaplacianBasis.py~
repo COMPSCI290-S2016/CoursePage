@@ -1,0 +1,20 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import sys
+sys.path.append("S3DGLPy")
+from Primitives3D import *
+from PolyMesh import *
+
+if __name__ == '__main__':
+    m = LaplacianMesh()
+    m.loadFile("homer.off")
+    cmap = plt.get_cmap('jet')
+    
+    (VPos, VColors, ITris) = loadOffFileExternal('homer.off')
+    
+    VPosE = igl.eigen.MatrixXd(VPos)
+    ITrisE = igl.eigen.MatrixXi(ITris)
+    L = igl.eigen.SparseMatrixd()
+    igl.cotmatrix(VPosE,ITrisE,L)
+    plt.spy(L)
+    plt.show()

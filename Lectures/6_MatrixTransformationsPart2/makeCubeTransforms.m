@@ -1,0 +1,117 @@
+Vs = [0 0 0; 0 1 0; 1 1 0; 1 0 0; 0 0 1; 0 1 1; 1 1 1; 1 0 1];
+faces = [1 2 3 4; 2 6 7 3; 4 3 7 8; 1 5 8 4; 1 2 6 5; 5 6 7 8];
+patch('Vertices', Vs, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+xr = [-1, 2];
+yr = [-1, 2];
+zr = [-1, 2];
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+%print('-dsvg', 'CubeOrig.svg');
+
+%Scales
+clf;
+A = [2 0 0 ; 0 1 0; 0 0 1 ];
+V = (A*Vs')';
+patch('Vertices', V, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+%print('-dsvg', 'ScaleX.svg');
+
+%Scales
+clf;
+A = [2 0 0 ; 0 1 0; 0 0 1 ];
+V = (A*Vs')';
+patch('Vertices', V, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+%print('-dsvg', 'ScaleX.svg');
+
+%Flip XZ
+clf;
+A = [-1 0 0; 0 1 0; 0 0 -1 ];
+V = (A*Vs')';
+patch('Vertices', V, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+%print('-dsvg', 'FlipXZ.svg');
+
+%Double Shear X
+clf;
+A = [1 1 1 ; 0 1 0; 0 0 1 ];
+V = (A*Vs')';
+patch('Vertices', V, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+xr = [-1, 3];
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+axis equal;
+%print('-dsvg', 'DoubleShearX.svg');
+
+%Shear XY
+clf;
+A = [1 1 0; 0 1 1; 0 0 1 ];
+V = (A*Vs')';
+patch('Vertices', V, 'Faces', faces, 'FaceVertexCData', (1:6)', 'FaceColor', 'flat');
+hold on;
+xr = [-1, 2];
+plot3([0, max(xr)], [0, 0], [0, 0], 'k');
+xlabel('X');
+plot3([0, 0], [0, max(yr)], [0, 0], 'k');
+ylabel('Y');
+plot3([0, 0], [0, 0], [0, max(zr)], 'k');
+zlabel('Z');
+xlim(xr);
+ylim(yr);
+zlim(zr);
+view(-30, 44);
+axis vis3d;
+%print('-dsvg', 'ShearXY.svg');

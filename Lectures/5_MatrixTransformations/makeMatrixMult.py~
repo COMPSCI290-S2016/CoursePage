@@ -1,0 +1,14 @@
+import numpy as np
+
+if __name__ == '__main__':
+    A = np.array([[3, 4], [3, -3], [4, -1], [0, 2]])
+    
+\begin{frame}{Matrices And Matrix Multiplication}
+
+\[ \left[ \begin{array}{ccc} \textcolor{blue}{3} & \textcolor{blue}{4} \\ 3 & -3 \\ 4 & -1 \\ 0 & 2\end{array} \right] \left[ \begin{array}{ccc} 1 & 2 & \textcolor{blue}{3} \\ -2 & 4 & \textcolor{blue}{2} \end{array} \right] = \left[ \begin{array}{ccc} -5 & 22 & - \\ - & - & - \\ - & - & - \end{array} \right] \]
+
+\[ AB_{i,j} = A_i \cdot B^j \]
+
+\[ AB_{1, 2} = (3, 4) \cdot (3, 2) = 3(3) + 4(2) = 17 \]
+
+\end{frame}

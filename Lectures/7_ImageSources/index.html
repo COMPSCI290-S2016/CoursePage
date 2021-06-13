@@ -1,0 +1,278 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+<script src= "gl-matrix-min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../index.html">General</a></li>
+<li><a href = "../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../assignments.html">Assignments</a></li>
+<li><a href = "../../finalproject.html">Final Project</a></li>
+<li><a href = "../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Lecture 7: Image Sources, Convolution, Scene Graphs</center></h1>
+
+<h2><a href = "slides.pdf">Click here</a> to see today's slides</h2>
+
+
+
+<p>
+Today we went over all of the math that's needed for <a href = "../../Assignments/Group1_ImageSources/spec.html">Group Assignment 1</a>.  This includes the "image sources" algorithm for modeling specular reflections (angle in = angle out) of any order in an environment with a bunch of polygons.  It also includes "convolution," which is a process for simulating what an environment does to a sound after bouncing it around and contributing lots of echoes.  The final piece of the puzzle is the "scene graph," which is a way of organizing a complex hierarchy of transformations that occurs in real world virtual environment modeling.  With these three pieces and the vector math we've discussed so far, we have enough to complete a very fun assignment on virtual sound simulation in 3D environments.
+</p>
+
+
+<ul>
+<li><a href = "#specular">Specular Reflections</a></li>
+<li><a href = "#imagesources">Image Sources</a>
+<ul>
+<li><a href = "#basicalgo">Basic Algorithm</a></li>
+<li><a href = "#multi">Multiple Reflections</a></li>
+<li><a href = "#invalid">Invalid Paths</a></li>
+</ul>
+</li>
+<li><a href = "#convolution">Convolution</a></li>
+<li><a href = "#scenegraphs">Scene Graphs</a></li>
+</ul>
+
+<h1><a name = "specular">Specular Reflections</a></h1>
+
+Before discussing the image sources algorithm, it's important to discuss how to compute "specular reflections."  These are reflections in which an incoming ray is transformed into an outgoing ray, such that the angle that they make with the reflecting plane is the same.  For ease of illustration in the examples below, a line will be drawn in place of a plane, but the same math applies in any Euclidean dimension since the dot product generalizes (and in your assignment you will be doing this in 3D)
+
+<BR>
+<img src = "SpecReflec1.svg"><BR><BR>
+
+By complementary angles, another way to say this is that <b>v<SUB>in</SUB></b> and <b>v<SUB>out</SUB></b> must make the same angle with the normal to the line, <b>n</b>:<BR><BR>
+
+<img src = "SpecReflec2.svg"><BR><BR>
+
+If we <a href = "../2_VectorsIntro/index.html#proj">project</a> <b>v<SUB>in</SUB></b> onto the line normal <b>n</b>, we get a perpendicular component <b>v<SUB>perp</SUB></b>
+
+<h2>\[ \vec{v_{\perp}} = \left( \frac{\vec{v_{\text{in}}} \cdot \vec{n}}{\vec{n} \cdot \vec{n}} \right) \vec{n}  \]</h2>
+
+If we write the component of <b>v<SUB>in</SUB></b> parallel to the line as  <b>v<SUB>par</SUB></b>, then we can decompose <b>v<SUB>in</SUB></b> as
+
+<h2>
+\[ \vec{v_{\text{in}}} =  \vec{v_{\parallel}} + \vec{v_{\perp}} \]
+</h2>
+
+As shown in the picture below, <b>v<SUB>out</SUB></b> can be written the same way, except the perpendicular component is flipped (the parallel component stays exactly the same
+
+<BR><BR>
+<img src = "SpecReflec3.svg">
+<BR><BR>
+
+Thus,
+<h2>
+\[ \vec{v_{\text{in}}} = \vec{v_{\parallel}} - \vec{v_{\perp}}\]
+</h2>
+
+Making some substitutions, in terms of <b>v<SUB>in</SUB></b> and the normal <b>n</b>, <b>v<SUB>out</SUB></b> is, therefore,
+
+<h2>
+\[ \vec{v_{\text{out}}} = \vec{v_{in}} - 2\vec{v_{\perp}} \]
+
+\[ \vec{v_{\text{out}}}  = \vec{v_{in}} - 2\left( \frac{\vec{v_{\text{in}}} \cdot \vec{n}}{\vec{n} \cdot \vec{n}} \right) \vec{n} \]
+</h2>
+
+If <b>n</b> has been normalized (so that its magnitude is 1), then this can be written more simply as
+
+<h2>
+\[ \vec{v_{\text{out}}}  = \vec{v_{in}} - 2\left( \vec{v_{\text{in}}} \cdot \vec{n} \right) \vec{n} \]
+</h2>
+
+And that's all there is to it!  Now we can move onto an algorithm that can find these types of paths from a source to a receiver in a very efficient and elegant way
+<BR><BR><HR>
+
+<h1><a name = "imagesources">Image Sources</a></h1>
+
+<h2><a name = "basicalgo">Basic Algorithm</a></h2>
+
+Now that we know how to perform reflections that make a perfect angle in and angle out, let's try to apply them to find the perfect specular path from a source (blue point) to a receiver (red point).  The images below show some attempts at casting rays in different directions and looking at where they fall
+
+
+<table>
+<tr>
+<td><img src = "ImageSources1.svg"></td> 
+<td><img src = "ImageSources2.svg"></td> 
+<td><img src = "ImageSources3.svg"></td> 
+</tr>
+</table>
+
+<BR><BR>
+Even though these rays are all very close to each other in direction, they all miss the receiver after the reflection.  This problem only gets worse when we then start to consider "second order bounces"; that is, rays that take another specular bounce after reflecting so that there are two perfect reflections before they reach the source.  The picture below shows this phenomenon.  Even though there are only very small differences of the directions in which the three rays are cast from the blue point (perhaps only 20 degrees), there is a drastic difference in the reflected directions after two bounces, and it therefore takes a lot of precision to hit the exact ray that we want to get a perfect path from the source to the receiver:
+<BR><BR>
+<img src = "ImageSourcesMulti.svg" width = 454 height = 432>
+<BR><BR>
+Therefore, casting rays in a bunch of different directions is clearly not the way to go here.  As it turns out, there is a much more elegant way to extract specular paths from source to receiver by using mirror images, also known as <b>image sources</b>.  The idea is to create a "virtual source," which is the mirror image of a source across a plane (again, lines drawn here for ease of illustration but this all applies in any dimension).  First, create the mirror image of the source across one of the line segments:<BR><BR>
+
+<img src = "ImageSourcesDrawn0.svg" width = 454 height = 432>
+
+<BR><BR>
+To create a mirror image, take any point <b>p</b> on the plane and create a vector from the source <b>s</b> to <b>p</b>: <b>v<SUB>ps</SUB></b> = <b>s - p</b>.  As before, this vector can be written as
+
+<h2>
+\[ \vec{v_{ps}} = \vec{v_{\perp}} + \vec{v_{\parallel}} \]
+</h2>
+
+That is, the mirror image is the same perpendicular length from the mirroring plane as the original source, just with that perpendicular direction flipped, as shown in the picture below:<BR><BR>
+
+<img src = "MirrorReflect.svg">
+
+<BR><BR>
+Then, similarly to before, we want to subtract 2x the perpendicular component from <b>s</b> to get its mirror image <b>s'</b>.  In sum, given any point <b>p</b> on the plane, a normalized plane normal <b>n</b>, and a source <b>s</b>, the mirror image <b>s'</b> is
+
+<h2>
+\[ \vec{s'} = \vec{s} - (2(\vec{s}-\vec{p}) \cdot \vec{n}) \vec{n}  \]
+</h2>
+
+Now that we have a mirror image for the source, we can treat it as if it were itself a source, and cast a path from it to the receiver:<BR><BR>
+
+<img src = "ImageSourcesDrawn1.svg" width = 454 height = 432><BR><BR>
+
+Now to turn this into a path that starts at the real source instead of its mirror image, simply mark the intersection point of the above path with the face that gave rise to the mirror image (marked in magenta in the image below), and trace a path from this intersection point back to the source:<BR><BR>
+
+<img src = "ImageSourcesDrawn2.svg" width = 454 height = 432><BR><BR>
+
+(<b>see <a href = "../4_PlanesInteriorDuality/slides.pdf">slide 14 of lecture 4</a> for the equation intersecting a ray with a plane for how to get the magenta point</b>)<BR><BR>
+
+And that gives you the final path, with a perfect angle in and angle out!  This seems like magic, but there's a very simple geometric proof showing that it indeed does given the same angle in as angle out, as shown in the image below.  We start by noting that the source and its mirror image are the same perpendicular distance from the mirroring line segment, as discussed above.  Since these distances are perpendicular distances, we can draw two right triangles that have them as congruent segments.  Then, we show that these right triangles actually overlap at a segment, which is trivially congruent to itself, so the right triangles are actually fully congruent.  This means that the two angles shown adjacent to the magenta point (including the angle in) are congruent, and by reflex angles they are also congruent to angle out.  This completes the proof<BR><BR>
+
+<img src = "ImageSourcesDrawn3Proof.svg" width = 454 height = 432><BR><BR>
+
+The magic of this is, for a fixed source position and fixed geometry, we can move the receiver to any position in the plane and all we have to do is follow this same procedure.  This will give us the exact specular path every time.  I would encourage you to practice this on paper with different scenarios to convince yourself that this works (we did a few examples in class)<BR><BR>
+
+<h2><a name = "multi">Multiple Reflections</a></h2>
+Now that we have the basic mirror images algorithm down, let's discuss how to model multiple bounces off of different planes.  For this, we follow the same basic philosophy, but now we actually create mirror images of mirror images (the same thing would happen with light if you had a system of mirrors).  The figure below shows creating the first mirror image about the top segment, and then creating a mirror image of that image across the bottom segment<BR><BR>
+
+<img src = "ImageSourcesMultiDrawn0.svg" width = 600 height = 600><BR><BR>
+
+Now we do the exact same thing as before: we start by tracing a path from the mirror image on the bottom to the receiver:<BR><BR>
+
+<img src = "ImageSourcesMultiDrawn1.svg" width = 600 height = 600><BR><BR>
+
+To turn this into a path which goes to the first mirror image, we trace the intersection point with the bottom face back to the first mirror image, same as before:<BR><BR>
+
+<img src = "ImageSourcesMultiDrawn2.svg" width = 600 height = 600><BR><BR>
+
+But we're still not all the way back to the original source, so we still have to repeat this step one more time, tracing the intersection point of the last path with the top segment back to the original source:<BR><BR>
+
+<img src = "ImageSourcesMultiDrawn3.svg" width = 600 height = 600><BR><BR>
+
+Just to make sure this point is really driven home, let's dive into an example with three bounces.  Things are getting a little more complicated now, so let's number the mirror images by their <b>order</b> (number of bounces needed to get from the image in question back to the source) and also color code them.  First, start just as before.  Get the mirror image of the source about the first face, which I draw in orange.  Then get the mirror image of that mirror image around the second face, which I draw in green.  Finally, get the mirror image of that mirror image around the third face, which I draw in pink:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn0.svg" width = 500 height = 830><BR><BR>
+
+Notice how for the second (and especially) third mirror image, we reflect the images around parts of the lines containing the line segments which are quite far from the segment boundaries.  So remember in your assignment when creating the images, it doesn't matter how far outside of the polygons the reflection points are; you're simply reflecting the points about the plane that spans the polygon.<BR><BR>
+
+Okay now let's dive into the algorithm again.  The first step is to trace a path from mirror image 3 all the way at the end back to the receiver:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn1.svg" width = 500 height = 830><BR><BR>
+
+Now we need to convert this to a path that goes back to mirror image 2, which gave rise to mirror image 3.  To do this, we find the intersection with the pink face, and trace a path from that intersection to the green face:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn2.svg" width = 500 height = 830><BR><BR>
+
+Now, we need to figure out the part of the path that reflects across the green face back to mirror image 1, which gave rise to mirror image 2 across the green face.  Find the intersection point of the path with the green face, and trace back from that intersection point to mirror image 1:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn3.svg" width = 500 height = 830><BR><BR>
+
+Finally, we want to find the path back to the original source, so find the intersection point with the first (orange) mirror face, and trace a path from that intersection point back to the original source:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn4.svg" width = 500 height = 830><BR><BR>
+
+Just to draw this without all of the virtual paths and images in the way, here's what the final 3-bounce path looks like:<BR><BR>
+
+<img src = "ImageSources2MultiDrawn5.svg" width = 500 height = 500><BR><BR>
+
+Notice how the angle in equals the angle out on every bounce.  This is quite remarkable and quite elegant!  Tracing these paths is also very amenable to recursion, since, starting at a particular virtual image, you're tracing the intersection point with the reflecting face on the way back to the receiver to that virtual image's parent (the image that gave rise to it via reflection), and then you trace the next intersection point to that parent's parent, and so on all the way until you get back to the original source.<BR><BR>
+
+Note also that allowing images of <i>order <b>r</b></i> (up to <b>r</b> bounces) in a scene with <b>N</b> faces, there are
+<h2>\[ N(N-1)^{r-1} \]</h2>
+
+virtual images.  This is because there are <b>N</b> mirror images with all <b>N</b> faces on the first bounce.  But for each image after that, we only reflect it around <b>N-1</b> faces.  This is because we don't reflect a mirror image around the face that just gave rise to it; otherwise, we'll end up right back where we started.  In the three bounce example above, we don't reflect the orange image around the orange face, because it will end up right back on the blue image.  But we can reflect it across all of the <b>N-1</b> other faces.
+
+
+<h2><a name = "invalid">Invalid Paths</a></h2>
+
+We are almost finished describing the algorithm (and half of the points on the first group assignment).  The last thing that you have to worry about is whether the path you're looking at is blocked by an objects in the scene.  In the image below, for example, there is a pink object blocking the path traced back from the mirror image to the receiver.
+
+<img src = "ImageSourcesOcclusions2.svg" width = 454 height = 532><BR><BR>
+
+The brute force way of dealing with this is to intersect the ray cast from the mirror image to the receiver with every object in the scene and to make sure that the receiver is the object it hits first (you can sort them by the parameter <u><i>t</i></u> of the ray described as <b>p<SUB>0</SUB></b> + t<b>v</b>).  In the case of a higher order reflection, you need to check to make sure the first intersection point is along the face that gave rise to it.  For instance, in the three bounce example above, tracing a path back from the point on the pink line to mirror image 2, we need to make sure the first intersection point is on the green face.
+<BR><BR>
+
+The second thing we need to worry about is whether or not the intersection points representing the bounce points are even within the faces, since we weren't worried about face containment when we created the mirror images.  For instance, in the image below, the intersection point with the mirror face is outside of the line segment, so there is no valid path with perfect angle in = angle out from the source to the receiver.  
+
+<BR><BR>
+<img src = "ImageSourcesInsideSegment1.svg" width = 454 height = 532><BR><BR>
+
+In 3D, you have to check polygon containment, which is a bit tricker but can be done quickly if the polygon is convex, which you can assume in group assignment 1.  See <a href = "../4_PlanesInteriorDuality/slides.pdf">lecture 4 slides</a> for a few examples of tests you can perform to determine whether a point is inside of a polygon, the easiest of which is probably the area test since you already implemented that for mini assignment 1.
+
+<BR><BR><HR>
+<h1><a name = "convolution">Convolution</a></h1>
+
+Coming soon...see lecture slides and <a href = "../../Materials/InteractiveConvolution/">interactive demo</a> for now.  Note that this is implemented for you in the assignment
+
+<BR><BR><HR>
+<h1><a name = "scenegraphs">Scene Graphs</a></h1>
+
+We've spent a couple of lectures now talking about matrix transformations as functions that modify the geometry of points in some space.  Now, we're going to discuss how to apply a system of matrix transformations to model complex scenes.  The idea is to build a graph called a <b>scene graph</b> in which each node of the graph has a transformation that describes how to express all of the objects in that node and that node's children in the coordinate system of the node's parent.  For instance, take a look at the scene graph below of a bedroom, courtesy of <a href = "http://www.cs.princeton.edu/~tianqian/">Tianqiang Liu</a>:<BR><BR>
+
+<img src = "SceneGraphBedroom.png" width = 750 height = 511>
+
+<BR><BR>
+As you can see, there is a hierarchy of relationships between objects in this scene, and the idea is that each arrow has an associated transformation that says how to describe the object at the tip of the arrow in the coordinate frame of the object right above it at the head of the arrow.  At the top of the tree is <b>world coordinates</b> (in this example "bedroom coordinates"), which is the global coordinate system used to describe everything.  Usually in a rendering or physics application, we need to understand how to transform all objects into world coordinates.
+Let's just dive right into an example of how one would query this tree to express some of the objects in world coordinates.  First, let's label some of the transformations as matrices, as labeled in the following way:<BR><BR>
+
+<img src = "SceneGraphBedroomLabeled.png" width = 750 height = 511><BR><BR>
+
+For instance, to describe the bed in world coordinates, we need to multiply on the left by the matrix <b>T<SUB>1</SUB></b>.  Similarly, to describe the mattress in the coordinate frame of the bed, we need to multiply the points of the mattress on the left by the matrix <b>T<SUB>4</SUB></b>.  But notice that the mattress still isn't quite in world coordinates yet.  To put the mattress in world coordinates, we need to transform the points in bed coordinates by the matrix <b>T<SUB>2</SUB></b> to get it into the "sleep area," and then we need to transform by the matrix <b>T<SUB>1</SUB></b> to get it from the sleep area into world coordinates.  So we're applying a composition of functions, starting at the bottom at <b>T<SUB>4</SUB></b>, feeding that output to <b>T<SUB>2</SUB></b> as input, then feeding <b>T<SUB>2</SUB></b>'s output to <b>T<SUB>1</SUB></b>.  Writing this in matrix form, we have the matrix 
+
+<h2>
+\[ T = T_1 T_2 T_4 \]
+</h2>
+
+which says how to transform coordinates in the mattress into world coordinates, when multiplying mattress coordinates on the left by <b>T</b>.  Similarly, to get the pillows into world coordinates, we need to multiply the pillow geometry on the left by <b>T<SUB>1</SUB>T<SUB>3</SUB></b>, and to get the bed frame into world coordinates, we need to multiply on the left by <b>T<SUB>1</SUB>T<SUB>2</SUB>T<SUB>5</SUB></b>
+
+</div>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

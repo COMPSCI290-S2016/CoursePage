@@ -1,0 +1,6 @@
+How many bytes per vertex/face?
+
+*Start with vertex face adjacency list
+[OFF file, enough for rendering, but what about accessing neighborhood of vertex?]
+
+*Vertex: Position, 1 face

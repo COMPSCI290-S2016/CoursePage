@@ -1,0 +1,125 @@
+SECTION
+Geometric Primitives and Shape Transformations
+The course will start with an overview of some important mathematical concepts to get everyone on the same page.  These are the basic building blocks that will be used again and again in the rest of the course.  Towards the end of this unit, students will already know enough to tackle a very fun assignment on "sound rendering," or creating sound simulations that allow the user to "hear" what an environment modeled by virtual polygons sounds like as sound waves bounce around.<BR><i>NOTE: In this unit there will be more mini assignments than in other units.  Do not be alarmed, some of them are very short!  This is just to make sure we all stay in lockstep during the fundamentals</i>
+
+LECTURE
+Course Sneak Preview, Equidecomposing Polygons
+Intro
+<a href = "Lectures/Intro/FirstDayQuiz">Background knowledge assessment</a>
+LECTURE
+Vectors, Dot Products, Projections
+2_VectorsIntro
+
+LECTURE
+Line Segment Intersection, Circumcenters, Delaunay Triangulation, JSON 
+3_SegmentIntersection_Circumcenter
+<a href = "http://www.json.org/">http://www.json.org/</a>
+LECTURE
+Planes, Interior Point Testing, Duality
+4_PlanesInteriorDuality/slides.pdf
+<a href = "http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.139.1459&rep=rep1&type=pdf">Sariel Har-Peled's Duality Notes (Advanced)</a>
+LECTURE
+Intro To Matrix Transformations
+5_MatrixTransformations/slides.pdf
+[LENGYEL] Chapters 1-3, <a href = "http://bl.ocks.org/enjalot/7b226e90c7338c69606b">Translation/Rotation Demo</a>
+LECTURE
+Normal Transformations, 3D Transformations, Euler Angles
+6_MatrixTransformationsPart2/slides.pdf
+<a href = "Materials/EulerAnglesViz/">Euler Angles Visualization App</a> <!--<a href = "http://www.lighthouse3d.com/tutorials/glsl-tutorial/the-normal-matrix/">Lighthouse3D Normal Matrix Notes</a>!-->
+LECTURE
+Image Sources for Specular Reflections, Convolution, Scene Graphs
+7_ImageSources
+<a href = "http://www.cs.princeton.edu/~funk/presence03.pdf">funkhouser2003</a> (section 4.1.1), <a href = "http://nevyn.nu/kandarb/Extension%20of%20the%20image%20model%20to%20arbitrary%20polyhedra.pdf">Borish1984</a>, <a href = "http://gfx.cs.princeton.edu/pubs/Liu_2014_CCS/Liu_2014_CCS.pdf">Liu2014</a>, <a href = "Materials/InteractiveConvolution">Interactive Convolution App</a> <!--<a href = "http://webaudio.github.io/web-audio-api/convolution.html">WebAudio convolution documentation</a>!-->
+LECTURE
+Gimbal Lock, Quaternions/SLERP, Scene Graphs Continued
+
+<a href = "https://www.youtube.com/watch?v=zc8b2Jo7mno">Excellent youtube video on gimbal lock</a>, <a href = "https://www.youtube.com/watch?v=kAmsi05P9Uw">Houston, we have a problem</a>,<a href = "https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Proof_of_the_quaternion_rotation_identity">Quaternion Identity Proof</a>,<a href = "Materials/SlerpViz">SLERP Visualization App</a>
+LECTURE
+Quaternions Continued, <a href = "Assignments/Group1_ImageSources/spec.html">Group Assignment 1</a> Practice
+
+
+SECTION
+Point Clouds: Shape Alignment And Shape Statistics
+As an intro to 3D geometry representations, we will take a look at the point cloud data structure, which is the raw data format that comes back from 3D sensors such as the Kinect.  The data structure is very simple, which makes this unit a perfect entry point into statistical techniques in the context of 3D shapes, including PCA, shape alignment, and shape descriptors.  This section will culminate in an assignment called "Shape Google" in which students compete to create software to automatically recognize shapes, which will provide lots of practice with the math topics learned in the first unit, and which should be apt for those students interested in data analytics.
+
+LECTURE
+Point Clouds Overview, Eigenvalues/Eigenvectors, Principal Component Analysis
+10_PCA/slides.pdf
+<a href = "http://www.pointclouds.org">pointclouds.org</a>, <a href = "Materials/JSPCViewer">Interactive Point Cloud Viewer</a>, <a href = "Lectures/10_PCA/PCA2D.html">My Interactive 2D PCA Demo</a>, <a href = "http://setosa.io/ev/principal-component-analysis/">Another Interactive PCA Demo</a>, <a href = "Materials/PCAMethods.m">4 Different Ways To Do PCA in Matlab</a>, <a href = "http://statweb.stanford.edu/~candes/papers/RobustPCA.pdf">Robust PCA (Advanced)</a>
+LECTURE
+Group Assignment 1 Help, Procrustes Intro
+11_ImageSourcesReview/slides.pdf
+
+LECTURE
+SVD, Procrustes Distance
+12_Procrustes/slides.pdf
+<a href = "https://en.wikipedia.org/wiki/Kabsch_algorithm">Kabsch algorithm to solve orthogonal procrustes(Wikipedia)</a>, <a href = "https://en.wikipedia.org/wiki/Wahba's_problem">Wahba's Problem (Wikipedia)</a>, <a href = "http://www.ams.stonybrook.edu/~coutsias/papers/rmsd17.pdf">coutsias2004</a>
+LECTURE
+Finish Procrustes, Iterative Closest Points
+13_ICP
+<a href = "http://graphics.stanford.edu/~smr/ICP/comparison/chen-medioni-align-rob91.pdf">Chen_Medioni1991</a>, <a href = "http://eecs.vanderbilt.edu/courses/CS359/other_links/papers/1992_besl_mckay_ICP.pdf">Besl_McKay1992</a>, [BRONSTEIN] Ch 6.2, <a href = "http://lgg.epfl.ch/sparseicp">Sparse Iterative Closest Points 2013 (Advanced)</a>
+LECTURE
+3D Point Cloud Shape Descriptors
+14_ShapeGoogle/slides.pdf
+<a href = "http://www.cs.princeton.edu/courses/archive/fall05/cos429/papers/ankerst.pdf">Ankerst99</a>, <a href = "http://www.cs.princeton.edu/courses/archive/spr03/cs496/papers/johnson_hebert.pdf">Johnson99</a>, <a href = "http://www.cs.princeton.edu/~funk/tog02.pdf">Osada2002</a>, <a href = "http://cvssp-data.eps.surrey.ac.uk/Personal/AdrianHilton/Publications_files/huang10ijcv_final_1.pdf">Huang2010</a> (good overview)
+LECTURE
+Shape Descriptor Rankings, High Dimensional Data Analysis, Numpy
+15_HighDim_Numpy/slides.pdf
+<a href = "https://github.com/COMPSCI290-S2016/NumpyDemos">Numpy Code Examples</a>
+LECTURE
+Numpy Continued, Fourier Modes
+16_Fourier/slides.pdf
+
+LECTURE
+Midterm Exam
+
+
+LECTURE
+Phase Invariance, Circular/Spherical Functions, Spherical Harmonics
+18_SphericalHarmonics
+<a href = "http://dpd.cs.princeton.edu/Papers/FunkShapeTog.pdf">Funkhouser2003</a>
+SECTION
+Surfaces, Topology, And Nonrigid Geometry
+The class will now move onto the next level of complexity beyond point clouds to where points are connected together to form <i>manifold surfaces</i>.  Students will get an introduction to topology in the context of 3D shapes, and an emphasis will be placed on separating out geometric and topological properties of shapes.  After that, we will tackle "stretchy shapes," or nonrigid surfaces in 3D.  In the grand finale of the course, we will learn how to gracefully apply nonrigid deformations to shapes with the Laplacian Mesh representation, and we will learn how to exploit this new flexibility to match shapes in different poses and to systematically break 3D shapes into smaller parts.  We will also learn "isometry invariant" shape statistics that remain unchanged under nonrigid motions, such as a person moving their arms up and down.  This unit will culminate in an assignment in which students design an interactive application to deform 3D shapes.
+
+LECTURE
+Intro To Topology: The Euler Characteristic, Polytopes, Platonic Solids, Genus
+19_TopologyIntro/slides.pdf
+<a href = "http://www.ics.uci.edu/~eppstein/junkyard/euler/">20 Proofs of Euler's Theorem</a> (we did #4 in class)
+LECTURE
+Topology Continued, Polygon Meshes Data Structures
+20_TopologyFinished_DataStructures/slides.pdf
+<a href = "http://lgg.epfl.ch/publications/2008/botsch_2008_GMPeg.pdf">Botsch07 ch 1-3</a>
+LECTURE
+Subdivision Surfaces And Implicit Surfaces
+
+<a href = "https://mrl.nyu.edu/publications/subdiv-course2000/coursenotes00.pdf">Zorin00</a>, <a href = "https://graphics.stanford.edu/papers/volrange/volrange.pdf">CurlessLevoy1996.pdf</a>, <a href = "http://www.eecs.berkeley.edu/~jrs/meshpapers/LorensenCline.pdf">LorensenCline</a> (most highly cited paper in graphics!), <a href = "http://scikit-image.org/docs/dev/auto_examples/edges/plot_contours.html">Scipy Marching Squares</a>, <a href = "https://github.com/pmneila/PyMCubes">numpy marching cubes</a>, <a href = "https://evanw.github.io/csg.js/">Javascript Boolean Shape Operations</a>
+LECTURE
+Laplacian Meshes
+22_LaplacianMesh/slides.pdf
+<b><a href = "http://www.cs.berkeley.edu/~jrs/meshpapers/Sorkine.pdf">Sorkine05</a> (Section 2)</b>, <a href = "http://www.math.zju.edu.cn/cagd/Seminar/2006_AutumnWinter/2006_Autumn_Doctor_HQQ_ref1.pdf">Sorkine04</a> (explains rotation estimation), <a href = "http://sites.fas.harvard.edu/~cs277/papers/sorkine_asrigid.pdf">Sorkine07</a> (as rigid as possible), <a href = "http://www.cs.princeton.edu/courses/archive/fall10/cos526/art2/">COS 526 Fall 2010 Art Contest</a>, <a href = "http://www.cs.cmu.edu/~kmcrane/Projects/DGPDEC/paper.pdf">Crane Discrete Differential Geometry</a>
+LECTURE
+Spectral Meshes
+23_Spectral/slides.pdf
+<b><a href = "http://graphics.stanford.edu/courses/cs164-10-spring/Handouts/taubin.pdf">Taubin1995</a></b>, <a href = "http://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Karni00.pdf">Karni00</a>, <a href = "http://www.cs.princeton.edu/courses/archive/fall10/cos526/papers/zhang10.pdf">Zhang2010</a>, <a href = "ftp://ftp.gdv.uni-hannover.de/papers/reuter2006-shape_dna.pdf">Reuter2006 (Advanced)</a>, <a href = "http://www.cs.jhu.edu/~misha/Fall07/Papers/Rustamov07.pdf">Rustamov2007</a> (Advanced)
+LECTURE
+Heat Flow on Meshes
+24_HeatFlow/slides.pdf
+<a href = "http://www.dtic.mil/dtic/tr/fulltext/u2/a513233.pdf">Mahmoudi2008</a>, <a href = "http://www.lix.polytechnique.fr/~maks/papers/hks.pdf">Sun2009</a> (Advanced)
+LECTURE
+Geodesics and Fast Marching
+25_Geodesics/slides.pdf
+<a href = "http://www.pnas.org/content/95/15/8431.full.pdf">KimmelSethian1998 (Advanced)</a>, <a href = "http://www.dtic.mil/dtic/tr/fulltext/u2/a513233.pdf">MahmoudiSapiro2008</a>, [BRONSTEIN] Ch 5, <a href = "https://www.ceremade.dauphine.fr/~peyre/matlab/fast-marching/content.html">Gabriel Peyre's Fast Marching Library/Tutorial</a>, <a href = "http://www.cs.jhu.edu/~misha/ReadingSeminar/Papers/Crane12.pdf">Crane2013</a>
+LECTURE
+Multidimensional Scaling and Canonical Forms
+26_CanonicalForms/slides.pdf
+<a href = "http://www.cs.technion.ac.il/~ron/PAPERS/a194_asielad.pdf">EladKimmel2001</a>, Bronstein Ch. 7
+LECTURE
+Mesh Parameterization / Flattening <BR>(Guest Lecture by <a href = "https://services.math.duke.edu/~trgao10/">Tingran Gao</a>)
+
+
+LECTURE
+Course Wrap-Up / Raffle
+
+
+

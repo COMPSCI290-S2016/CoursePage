@@ -1,0 +1,146 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../main.css" />
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+<script src= "gl-matrix-min.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../index.html">General</a></li>
+<li><a href = "../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../assignments.html">Assignments</a></li>
+<li><a href = "../../finalproject.html">Final Project</a></li>
+<li><a href = "../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>Procrustes Distance / Iterative Closest Points</center></h1>
+
+<h2><a href = "slides.pdf">Click here</a> to see today's slides</h2>
+
+
+This page will be expanded more in the near future, but for now here are some of the videos I showed:
+
+
+<h1><u>Procrustes Videos</u></h1>
+<table border = "1">
+<tr><td><h2><a href = 'ProcrustesVideos/2DProcrustes.ogg'>2DProcrustes.ogg</a></h2></td></tr>
+<tr><td>Showing an example of rotating points with the procrustes objective of maximizing the sum of the dot products of all corresponding points.  The right plot shows the sum of the dot products</td></tr>
+<tr><td>
+<video controls>
+  <source src='ProcrustesVideos/2DProcrustes.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'ProcrustesVideos/Original3DFaceFrames.ogg'>Original3DFaceFrames.ogg</a></h2></td></tr>
+<tr><td>3D frames of my head moving around and talking (ignore the two frames...they're the same thing, just making sure a forward and inverse transformation got me the same thing as I was debugging something.  Also there are some problems with the "near dist" in rendering where it fades out...ugh Matlab)</td></tr>
+<tr><td>
+<video controls>
+  <source src='ProcrustesVideos/Original3DFaceFrames.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'ProcrustesVideos/FactoringOutRigid.ogg'>FactoringOutRigid.ogg</a></h2></td></tr>
+<tr><td>Applying 3D procrustes alignment to align each frame of the above video the first frame.  Red line segments are drawn between the corresponding points from the current frame to the first frame after alignment.  Notice how all of the motion has been factored out and it's just speech differences that are left</td></tr>
+<tr><td>
+<video controls>
+  <source src='ProcrustesVideos/FactoringOutRigid.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+<HR>
+<h1><u>Iterative Closest Points Videos</u></h1>
+
+<table border = "1">
+<tr><td><h2><a href = 'ICPExample/ICP2DExample.ogg'>ICP2DExample.ogg</a></h2></td></tr>
+<tr><td>The 2D example I showed in class to illustrate the algorithm</td></tr>
+<tr><td>
+<video controls>
+  <source src='ICPExample/ICP2DExample.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'ICPVideos/ICP.ogg'>ICP.ogg</a></h2></td></tr>
+<tr><td>Applying ICP to align my face to someone else's face</td></tr>
+<tr><td>
+<video controls>
+  <source src='ICPVideos/ICP.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'ICPVideos/ICPMeToCraig.ogg'>ICPMeToCraig.ogg</a></h2></td></tr>
+<tr><td>Applying ICP to align my bust to someone else's bust</td></tr>
+<tr><td>
+<video controls>
+  <source src='ICPVideos/ICPMeToCraig.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<table border = "1">
+<tr><td><h2><a href = 'ICPVideos/ICPUpsideDownMatch.ogg'>ICPUpsideDownMatch.ogg</a></h2></td></tr>
+<tr><td>An example of ICP with a bad intial alignment, causing it to settle on a "local minimum" of aligning my face upside down</td></tr>
+<tr><td>
+<video controls>
+  <source src='ICPVideos/ICPUpsideDownMatch.ogg' type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</td></tr>
+</table><BR><BR>
+
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+*Mention how two different types of recursion in the assignment
+(1) Scene graph hierarchy
+(2) Image source generation

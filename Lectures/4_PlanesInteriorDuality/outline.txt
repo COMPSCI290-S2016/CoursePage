@@ -1,0 +1,2 @@
+1) Normals
+*A normal is something that points in the direction of the space that's not covered

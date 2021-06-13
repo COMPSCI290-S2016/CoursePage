@@ -1,0 +1,5 @@
+index.html
+syllabus_begin.html
+finalproject.html
+assignments.html
+raffle.html

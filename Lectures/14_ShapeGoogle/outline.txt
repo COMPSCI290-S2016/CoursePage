@@ -1,0 +1,54 @@
+Go over special case
+Midterm topics
+
+
+Critera:
+*Concise To Store
+*Quick to compute
+*Efficient to match
+*Discrmininating
+*Noise tolerant [d2 example, normal example]
+
+Define Invariance:
+*Mention scale/translation invariant
+*Rotation Invariant
+
+
+-----------------
+Algorithms:
+-A note on papers
+
+*Shape Histogram: Basic [My own figures]
+-Discriminative? Show mixed up rotations
+*Shape Histogram: PCA magnitudes included [illustrate instability of eigenvectors but stability of eigenvalues]
+
+*Spin Images (Also teach bilinear interpolation).  Not compressed, but can use PCA (discussed in paper)
+
+*D2: Primitive Examples, Real Examples, ask to identify primitive examples like real examples
+*A3, D1, D3, D4
+
+
+*Extended Gaussian Image
+
+Improving Spin Image And EGI with PCA Alignment or ICP
+*Hausdorff Distance
+
+
+
+-----------------
+Comparing Histograms
+Be sure to normalize the histograms
+-L1 Distance
+-L2 Distance
+-Cosine Distance
+-1D Earth Mover's Distance
+-Chi Squared?
+
+
+------------------
+Evaluating Performance
+-Precision/Recall
+
+Numpy Syntax / Tricks
+-Randperm trick
+-Distance histogram trick

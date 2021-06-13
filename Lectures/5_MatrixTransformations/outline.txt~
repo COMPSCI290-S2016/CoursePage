@@ -1,0 +1,35 @@
+Software TODO:
+*Python script to automatically generate results of scaling by 2D matrices
+*Python script to generate 3D cube transformations with OpenGL
+*Javascript app to show column interpretation of matrix transformations
+
+Rotation matrix visualization:
+http://bl.ocks.org/enjalot/7b226e90c7338c69606b
+
+*Dot product and column addition interpretations
+-Lots of examples: Scale, rotation, flip, shear
+-GUI (time permitting)
+
+
+
+*Orthogonal matrix definition
+
+*Show rotation matrices in 3D
+
+*Inverses
+
+*Homogenous coordinates
+(ask them if they can come up with a matrix that does translation, and show mathematically why this is impossible)
+
+*Projection matrices
+
+*Hint at matrices which aren't square
+
+*Show how system of equations can be interpreted geometrically
+
+*Show example with rotation + translation versus translation + rotation to highlight non-commutativity
+
+
+Other:
+*Transpose definition
+-Transpose properties?

@@ -1,0 +1,3 @@
+*Introduce SVD, connect to PCA
+
+*Talk about Procrustes distance, and partial procrustes distance.  Also talk about allowing reflections (right hand to left hand?)

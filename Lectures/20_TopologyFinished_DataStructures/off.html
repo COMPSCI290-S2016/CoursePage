@@ -1,0 +1,125 @@
+<table>
+
+<tr><td>
+
+<table border = "1" cellpadding = "10">
+<tr><td bgcolor = "#BBBBBB">Vertices</td></tr>
+<tr><td>x<SUB>1</SUB> y<SUB>1</SUB> z<SUB>1</SUB></td></tr>
+<tr><td> ... </td></tr>
+<tr><td>x<SUB>N</SUB> y<SUB>N</SUB> z<SUB>N</SUB></td></tr>
+</table>
+
+</td>
+<td>
+
+<table border = "1" cellpadding = "10">
+<tr><td bgcolor = "#BBBBBB">Faces</td></tr>
+<tr><td>i<SUB>11</SUB> i<SUB>12</SUB> i<SUB>13</SUB></td></tr>
+<tr><td>i<SUB>21</SUB> i<SUB>22</SUB> i<SUB>23</SUB></td></tr>
+<tr><td> ... </td></tr>
+<tr><td> ... </td></tr>
+<tr><td> ... </td></tr>
+<tr><td>i<SUB>F1</SUB> i<SUB>F2</SUB> i<SUB>F3</SUB></td></tr>
+</table>
+
+</td>
+</tr></table>
+
+
+
+<table>
+<tr><td>
+
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Vertex</td></tr>
+<tr><td>Point</td><td>position</td></tr>
+<tr><td>FacePointer</td><td>face</td></tr>
+</table>
+
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Face</td></tr>
+<tr><td>VertexPointer</td><td>vertices[3]</td></tr>
+<tr><td>FacePointer</td><td>neighbors[3]</td></tr>
+</table>
+
+</td>
+
+<td>
+<img src = "FaceAdjacency.svg" width = 250 height = 250>
+</td>
+</tr>
+</table>
+
+
+
+<table>
+<tr><td>
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Vertex</td></tr>
+<tr><td>Point</td><td>position</td></tr>
+<tr><td>EdgePointer</td><td>edges[] (CCW)</td></tr>
+</table>
+
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Face</td></tr>
+<tr><td>VertexPointer</td><td>startVertex</td></tr>
+<tr><td>EdgePointer</td><td>edges[] (CCW)</td></tr>
+</table>
+
+</td>
+
+<td>
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Edge</td></tr>
+<tr><td>VertexPointer</td><td>vertex1</td></tr>
+<tr><td>VertexPointer</td><td>vertex2</td></tr>
+<tr><td>FacePointer</td><td>face1</td></tr>
+<tr><td>FacePointer</td><td>face2</td></tr>
+</table>
+
+</td>
+</tr>
+</table>
+
+
+<table>
+<tr><td>
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Vertex</td></tr>
+<tr><td>Point</td><td>position</td></tr>
+<tr><td>HalfEdgePointer</td><td>halfedge</td></tr>
+</table>
+
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">Face</td></tr>
+<tr><td>HalfedgePointer</td><td>halfedge</td></tr>
+</table>
+
+</td>
+
+<td>
+
+<table border = "1" cellpadding = "10">
+<tr><td colspan = "2" bgcolor = "#BBBBBB">HalfEdge</td></tr>
+<tr><td>VertexPointer</td><td>vertex</td></tr>
+<tr><td>FacePointer</td><td>face</td></tr>
+<tr><td>HalfEdgePointer</td><td>next</td></tr>
+<tr><td>HalfEdgePointer</td><td>previous</td></tr>
+<tr><td>HalfEdgePointer</td><td>opposite</td></tr>
+</table>
+
+</td>
+
+
+<td><img src = "HalfEdgeIllustration.svg"></td>
+
+</tr>
+</table>
+

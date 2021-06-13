@@ -1,0 +1,28 @@
+*Go over laplacian matrix again
+
+*Talk about rotation invariance
+
+*Go over derivative of sinusoids
+
+
+*Show the eigenvector of all 1s
+
+*Show line segment case
+
+*Show plane case
+
+*Show sphere case
+
+*Talk about dividing by the degree (mass matrix) and how this breaks the symmetry
+
+
+*Show lots of examples of modes on surfaces
+
+*Mention how these can be thought of "standing wave modes"
+
+*Show compression application
+-Start with showing denoising signal
+
+-Mention dividing into patches
+
+*Mention shape DNA, show histograms

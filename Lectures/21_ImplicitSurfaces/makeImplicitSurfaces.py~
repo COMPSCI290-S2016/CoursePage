@@ -1,0 +1,19 @@
+import sys
+sys.path.append("S3DGLPy")
+from Primitives3D import *
+from PolyMesh import *
+
+import numpy as np
+import matplotlib.pyplot as plt
+import mcubes #https://github.com/pmneila/PyMCubes
+
+if __name__ == '__main__':
+    X, Y, Z = np.mgrid[:100, :100, :100]
+    u = np.exp(-((X-70.0)**2 + (Y-70.0)**2 + (Z-70.0)**2)/(2.0*5.0**2))
+    u += np.exp(-((X-50.0)**2 + (Y-50.0)**2 + (Z-50.0)**2)/(2.0*15.0**2))
+    u = u - 0.2
+    VPos, ITris = mcubes.marching_cubes(u, 0)
+    D = np.sqrt((X-50.0)**2 + (Y-50.0)**2)
+    u[D < 20] = 0
+    #ITris = ITris[:, [2, 1, 0]]
+    saveOffFileExternal("out.off", VPos, np.array([]), ITris)

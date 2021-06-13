@@ -1,0 +1,159 @@
+<!-- Start of Header Code -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="../../../main.css" />
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../../favicon.ico" type="image/x-icon"/>
+<!--LaTeX in Javascript!-->
+<script src="../../../../../jsMath/easy/load.js"></script>
+<!--Syntax highlighting in Javascript!-->
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushCpp.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushMatlabSimple.js"></script>
+<script type="text/javascript" src="../../../../../syntaxhighlighter/scripts/shBrushPython.js"></script>
+<link type="text/css" rel="stylesheet" href="../../../../../syntaxhighlighter/styles/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<title>COMPSCI/MATH 290: Digital 3D Geometry Spring 2016</title>
+</head>
+<body>
+<div id="wrapper">
+
+<div id="menu-bar">
+<center><h1>COMPSCI/MATH 290: Spring 2016</h1></center>
+<ul class="menus-level0">
+<li><a href="../../../index.html">General</a></li>
+<li><a href = "../../../syllabus.html">Syllabus</a></li>
+<li><a href = "../../../assignments.html">Assignments</a></li>
+<li><a href = "../../../finalproject.html">Final Project</a></li>
+<li><a href = "../../../raffle.html">Raffle</a></li>
+</ul>
+</div>
+<!-- End of Header Code -->
+
+<div id="page-content">
+<h1><center>First Day Knowledge Assessment Answers</center></h1>
+
+<h2><a href = "quiz.pdf">Click here</a> to see the PDF version</h2>
+
+Below are the answers to the quiz
+
+
+<h2>Problem 1</h2>
+<p>
+<u>Question</u>: What is the unit normal of the triangle with vertices <code>(-1, 0, 0)</code>, <code>(1, 0, 0)</code>, <code>(0, 1, 0)</code>?
+</p>
+
+<p>
+<u>Answer</u>: Notice that the triangle lies entirely in the XY plane.  Therefore the unit triangle normal, or the normal which is perpendicular to the plane containing the triangle, is <code>(0, 0, 1)</code>, or simply the "up" (Z) vector.
+</p>
+
+
+<h2>Problem 2</h2>
+<u>Question:</u> Which of the following pairs of vectors are perpendicular?<BR><BR>
+<u>Answers (Inline):</u>
+
+Since 
+<h2>\[ \vec{u} \cdot \vec{v} = ||\vec{u}|| ||\vec{v}|| \cos (\theta) \]</h2>
+read "the dot product of vector <b>u</b> and vector <b>v</b> is the magnitude of <b>u</b> times the magnitude of <b>v</b> times the cosine of the angle between them, and the cosine of 90 degrees is zero, the dot product between two vectors is zero if and only if the two vectors are perpendicular.  So all we have to do is check for a zero dot product (we will talk about dot products in class on Tuesday)<BR><BR>
+
+<ul>
+<li>
+<code>(1, 1, 0)</code> and <code>(0, 0, 1)</code> (<b>YES</b>: 1*0 + 1*0 + 0*1 = 0)
+</li>
+
+<li>
+<code>(-1, 1, 0)</code> and <code>(1, -1, 0)</code> (<b>NO</b>: -1*1 + 1*-1 + 0*0 = -2)
+</li>
+
+<li> 
+<code>(-2, 1, 0)</code> and <code>(1, 2, 0)</code> (<b>YES</b>: -2*1 + 1*2 + 0*0 = 0)
+</li>
+
+<li>
+<code>(1, 2, 1)</code> and <code>(-3, 1, 1)</code> (<b>YES</b>: 1*-3 + 2*1 + 1*1 = 0)
+</li>
+</ul>
+
+<h2>Problem 3</h2>
+<u>Question:</u> What is parallel projection of the vector <code>(1, 1, 3)</code> onto the vector <code>(1, 1, 1)</code>?  <BR><BR>
+
+<u>Answer:</u> <code>(5/3, 5/3, 5/3)</code>
+<BR>
+As we will show in class, the formula of the parallel projection of a vector <b>u</b> onto a vector <b>v</b> is
+
+<h2>
+\[ \left( \frac{\vec{u} \cdot \vec{v}}{\vec{v} \cdot \vec{v}} \right) \vec{v} \]
+</h2>
+
+<h3>
+\[ \vec{u} \cdot \vec{v} = (1, 1, 3) \cdot (1, 1, 1) = 1 + 1 + 3 = 5 \]
+</h3>
+
+<h3>
+\[ \vec{v} \cdot \vec{v} = (1, 1, 1) \cdot (1, 1, 1) = 1 + 1 + 1 = 3\]
+</h3>
+
+Therefore, the vector we are looking for is 
+
+<h3>
+\[ \frac{5}{3} (1, 1, 1) \]
+</h3>
+
+<h2>Problem 4</h2>
+
+<h2>
+\[ e^{i \theta} =  \cos(\theta) + i \sin(\theta) \]
+</h3>
+
+<h2>Problem 5</h2>
+<u>Question:</u> Which vectors below are eigenvectors of the matrix 
+<h2>\[ \left[ \begin{array}{cc} 2 & 3 \\ 0 & -3 \end{array} \right] \]</h2>
+?<BR><BR>
+
+<u>Answer:</u>
+An <b>eigenvector</b> of a particular matrix <b>M</b> is a vector which points in the same direction before and after being multiplied by <b>M</b>.  The matrix above is a "skew matrix" which turns a square into a parallelogram.  In this case the bottom and top of the parallelogram are parallel to the x-axis, so every vector which only has an x component will remain on the bottom of the parallelogram in the same direction.
+
+<ul>
+<li> <code>(2, 1)</code> (<b>NO</b>)</li>
+
+<li> <code>(1, 0)</code> (<b>YES</b>)</li>
+
+<li> <code>(0, 3)</code> (<b>NO</b>)</li>
+</ul>
+
+
+<h2>Problem 6</h2>
+The Fourier Transform of \[\delta(t)\] is <b>1</b>.<BR><BR>
+
+<p>
+What is this saying in English?  We will talk about Fourier Transforms more in the second unit of the course, but they are basically a way of breaking down a function into a bunch of periodic components.  They are useful for anlayzing sound, for example, because musical instruments and voices resonate at particular frequencies, and it's easier to see what's going on when we put on our "frequency glasses."
+</p>
+
+<p>Now how about the Fourier transform of the function in this question?  A "delta function" is a function which is a "unit impulse."  It's a function that is zero everywhere except at the origin, where it is infinity (I'm glossing over some technical properties here..it's actually a "distribution" not a function).  Anyway, for an example of something in nature that's like a delta function, think of a balloon popping.  Assuming there are no echoes, it's quiet right before the balloon pop and quiet right after, but there is a very loud sound at the instant that the balloon pops.  It turns out that if we look at the fourier transform of such a signal, it has the same amount of all energy at all frequencies.  And in particular for a unit impulse delta that occurs at the origin, the all frequencies have a magnitude of <b>1</b> with phase zero.
+</p>
+
+</p>If this seems like nonsense now, don't worry, we'll talk about it later, and you'll get some intuition before we do on the first group assignment on sound rendering
+</p>
+
+</div>
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=7309088; 
+var sc_invisible=1; 
+var sc_security="f655b56d"; 
+</script>
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script>
+<noscript><div class="statcounter"><a title="free hit counter"
+href="http://statcounter.com/" target="_blank"><img class="statcounter"
+src="http://c.statcounter.com/7309088/0/f655b56d/1/" alt="free hit
+counter"></a></div></noscript>
+<!-- End of StatCounter Code -->
+
+</body>
+</html>
+
+
+

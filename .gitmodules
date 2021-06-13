@@ -1,0 +1,12 @@
+[submodule "Materials/ICPViz"]
+	path = Materials/ICPViz
+	url = https://github.com/COMPSCI290-S2016/ICPViz.git
+[submodule "Materials/SlerpViz"]
+	path = Materials/SlerpViz
+	url = https://github.com/COMPSCI290-S2016/SlerpViz.git
+[submodule "Materials/JSPCViewer"]
+	path = Materials/JSPCViewer
+	url = https://github.com/COMPSCI290-S2016/JSPCViewer.git
+[submodule "Materials/EulerAnglesViz"]
+	path = Materials/EulerAnglesViz
+	url = https://github.com/COMPSCI290-S2016/EulerAnglesViz.git

@@ -1,0 +1,54 @@
+LECTURE
+Generalized Multidimensional Scaling
+<a href = "References/Bronstein2006.pdf">Bronstein2006</a>, [BRONSTEIN] Ch 9
+LECTURE
+Scene Graphs, Skinning Meshes for Animation
+
+
+
+
+
+SECTION
+Miscellaneous Topics
+The course is quite comprehensive already, and there is lots of buffer room in case we need to take our time on certain topics.  But in case we get through everything, there are some miscellaneous topics I can teach for fun as groups work on their final projects.  There will be no assignments in this unit
+LECTURE
+Projective Geometry
+
+LECTURE
+Ray Tracing
+[LENGYEL] Chapter 5
+LECTURE
+Beam Tracing
+<a href = "References/heckbert1984.pdf">Heckbert1984</a>, <a href = "References/funkhouser1998.pdf">Funkhouser1998</a>, <a href = "References/Overbeck2007.pdf">Overbeck2007</a>
+LECTURE
+3D Convex Hulls
+
+LECTURE
+Spatial Subdivision and Octrees
+
+
+CCW / Sutherland Hodgman Clipping
+
+
+LECTURE
+Topology Part 2: Shortest Homology Basis and Cutting To Discs
+
+<a href = "http://www.cs.columbia.edu/~keenan/Projects/LoopsOnSurfaces/">Keenan Crane's page on homotopy, homology, and cut graphs</a>
+
+
+LECTURE
+Laplace Beltrami Spectra / Functional Maps
+
+<a href = "http://www.lix.polytechnique.fr/~maks/papers/obsbg_fmaps.pdf">Ovsjanikov2012</a>, <a href = "http://sites.fas.harvard.edu/~cs277/papers/map.pdf">Rustamov2013</a>
+
+
+<a href = "http://knight.cis.temple.edu/~latecki/Courses/RobotFall08/Papers/podolak-sig06-symmetry.pdf">Podolak2005</a>, <a href = "http://gfx.cs.princeton.edu/pubs/Kazhdan_2003_ARS/algorithmica.pdf">Kazhdan2004</a>, <a href = "http://robots.stanford.edu/papers/thrun-symmetry05.pdf">Thrun2005</a>, <a href = "http://www.cs.sfu.ca/~haoz/pubs/siga09_pirs_reduced.pdf">Xu2009</a> (Advanced), <a href = "http://vista.eng.tau.ac.il/publications/KorLitAviBroCGF14.pdf">KorLitAviBroCGF2014</a> (Advanced)
+
+
+
+
+LECTURE
+Curvature on Triangle Meshes
+
+<a href = "http://http.cs.berkeley.edu/~jrs/meshpapers/MeyerDesbrunSchroderBarr.pdf">Meyer2003</a>
+

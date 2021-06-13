@@ -1,0 +1,8 @@
+Outline:
+Define geodesic path.
+Show on sphere
+Show on another mesh
+
+Go over Dijsktra's algorithm
+
+Show how Dijkstra's algorithm fails on cartesian grids

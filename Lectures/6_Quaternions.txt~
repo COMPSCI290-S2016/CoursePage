@@ -1,0 +1,16 @@
+Mini exercise before this lecture using the gimbal lock app
+
+http://www.songho.ca/math/quaternion/quaternion.html
+
+https://www.youtube.com/watch?v=rrUCBOlJdt4
+
+Connection to line segment intersection trick
+
+Quaternions:
+*Start with complex numbers and 2D rotations
+
+*Show 
+
+*Show quaternion interpolation (use as a foreshadowing of geodesics later in the course)
+
+*Raffle point problem: Multiply two quaternions together right after teaching it

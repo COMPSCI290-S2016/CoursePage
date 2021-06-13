@@ -1,0 +1,14 @@
+import numpy as np
+
+if __name__ == '__main__':
+    fin = open("namesOrder.txt")
+    names = [l.strip() for l in fin.readlines()]
+    idx = np.random.rand(len(names))
+    idx = np.argsort(idx)
+    namesout = []
+    for i in range(len(idx)):
+        namesout.append(names[idx[i]])
+    fout = open("namesOrder.txt", "w")
+    for n in namesout:
+        fout.write("%s\n"%n)
+    fout.close()

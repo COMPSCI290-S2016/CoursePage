@@ -1,0 +1,10 @@
+import os
+
+if __name__ == '__main__':
+    files = os.listdir('.')
+    fout = open("files.html", "w")
+    fout.write("<html>\n<body>")
+    for f in files:
+        if f[-3:] == 'gif':
+            fout.write("<img src = %s><BR><BR>\n\n"%f)
+    fout.close()

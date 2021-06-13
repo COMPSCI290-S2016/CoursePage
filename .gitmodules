@@ -22,3 +22,6 @@
 [submodule "Assignments/Mini1_GeometricPrimitives"]
 	path = Assignments/Mini1_GeometricPrimitives
 	url = https://github.com/COMPSCI290-S2016/Mini1_GeometricPrimitives
+[submodule "Assignments/Mini3_ICP"]
+	path = Assignments/Mini3_ICP
+	url = https://github.com/COMPSCI290-S2016/Mini3_ICP.git

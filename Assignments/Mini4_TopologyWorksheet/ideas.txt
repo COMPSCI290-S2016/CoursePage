@@ -1,0 +1,7 @@
+*Derive an expression for the angle between two adjacent edges on the icosahedron
+
+*Show how to glue two tori together, what is the Euler characteristic of a 2-holed torus?
+-what is the euler characteristic of a k-holed torus?
+-Check your answer using betti numbers
+
+*Show that the mobius strip is not orientable

@@ -7,9 +7,6 @@
 [submodule "Materials/JSPCViewer"]
 	path = Materials/JSPCViewer
 	url = https://github.com/COMPSCI290-S2016/JSPCViewer.git
-[submodule "Materials/EulerAnglesViz"]
-	path = Materials/EulerAnglesViz
-	url = https://github.com/COMPSCI290-S2016/EulerAnglesViz.git
 [submodule "Assignments/Group1_ImageSources"]
 	path = Assignments/Group1_ImageSources
 	url = https://github.com/COMPSCI290-S2016/Group1_ImageSources.git
